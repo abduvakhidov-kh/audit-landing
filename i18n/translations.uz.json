@@ -1,0 +1,33 @@
+{
+  "i18n": {
+    "about_price": "Narx filialga bog'liq va barcha to'lovlar kiritilgan.",
+    "b_category": "Og'irligi 3500 kg dan oshmaydigan va 8 o'rindiqdan ko'p bo'lmagan avtomobillarni boshqarish.",
+    "bc_category": "O'rta va og'ir yuk mashinalarini, shuningdek, engil avtomobillarni haydash.",
+    "book": "Ro'yxatdan o'tish",
+    "carpark": "Bizning flotimiz",
+    "categories": "Kategoriyalar",
+    "c_category": "Faqat o'rtacha (3500 kg dan 7500 kg gacha) va yuk mashinalarini (7500 kg dan ortiq) haydash.",
+    "choose_categories": "Kategoriya tanlash",
+    "class_timings_title": "Trening guruhlari",
+    "contacts": "Kontaktlar",
+    "day_times": "Kunduzi",
+    "detailed_statistic": "Batafsil natijalar statistikasi",
+    "documents": "Hujjatlar",
+    "documents_for_study": "O'qish uchun hujjatlar:",
+    "e_category": "Ushbu toifaga treylerli transport vositalarini boshqarish huquqi beriladi (kichik tirkamalardan ko'p tonnali tirkamalargacha).",
+    "evening_times": "Kechki vaqt",
+    "groups": "Trening guruhlari",
+    "header": "Biz sizga 3 oy ichida qanday qilib yaxshi haydashni o'rgatamiz",
+    "individual_approach": "Har bir talabaga individual yondashish",
+    "instructors": "Haydovchilik yuqori tajribali o'qituvchilar tomonidan o'rgatiladi.",
+    "license": "Bizning litsenziyamiz",
+    "medical": "Tibbiy ma'lumotnoma 083",
+    "morning_times": "ertalabki vaqt",
+    "passport": "Ro'yxatdan o'tgan holda pasport nusxasi",
+    "percent_passed": "80% birinchi urinishda imtihondan o'tadi",
+    "period": "Biz 4 yildan ortiq dars berdik",
+    "photo": "Fotosurat 3x4 - 4 dona",
+    "student_amount": "7 mingdan ortiq talaba tayyorlandi",
+    "why_we": "Nega biz"
+  }
+}
