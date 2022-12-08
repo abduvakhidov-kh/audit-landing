@@ -19,7 +19,7 @@ const coursesList = [
   {
     id: 1,
     title: '1С 8.3',
-    img: './assets/images/1c.png',
+    img: './assets/images/picture14.png',
     modalData: {
       difficulty: 'easy',
       period: '10 days',
@@ -30,7 +30,7 @@ const coursesList = [
   {
     id: 2,
     title: 'Финансовое моделирование.',
-    img: './assets/images/finModeling.jpg',
+    img: './assets/images/picture13.jpg',
     modalData: {
       difficulty: 'easy',
       period: '10 days',
@@ -41,7 +41,7 @@ const coursesList = [
   {
     id: 3,
     title: 'ACCA DipIFR',
-    img: './assets/images/accaDipfir.png',
+    img: './assets/images/picture12.jpg',
     modalData: {
       difficulty: 'easy',
       period: '10 days',
@@ -53,7 +53,7 @@ const coursesList = [
     id: 4,
     title:
       '"Сертифицированный главный бухгалтер по МСФО" от британской ассоциации IAPBE',
-    img: './assets/images/iapbe.webp',
+    img: './assets/images/picture11.jpg',
     modalData: {
       difficulty: 'easy',
       period: '10 days',
@@ -96,7 +96,7 @@ const coursesList = [
   },
   {
     id: 8,
-    img: './assets/images/picture10.jpg',
+    img: './assets/images/picture4.png',
     title: 'Сертифицированный финансовый директор (IAPBE)',
     modalData: {
       difficulty: 'easy',
@@ -187,6 +187,7 @@ const Courses = () => {
           {coursesList.map(({ title, modalData, id, img }) => (
             <div className="max-w-sm " key={id}>
               <Card
+                className="h-full"
                 imgAlt="Meaningful alt text for an image that is not purely decorative"
                 imgSrc={img}
               >
