@@ -1,6 +1,6 @@
 export const AppConfig = {
-  site_name: 'Auto Kurs',
-  title: 'Auto Kurs - biz bilan haydovchiga aylaning',
-  description: 'Auto Kurs - biz bilan haydovchilig guvohnomasini oling',
+  site_name: 'Audit ava buxgalteriya uslugalari',
+  title: 'Audit uz - biz bilan buxgalterga aylaning',
+  description: 'Audit uz - biz bilan haydovchilig guvohnomasini oling',
   locale: 'uz',
 };

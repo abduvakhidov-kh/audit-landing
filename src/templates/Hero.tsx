@@ -20,28 +20,40 @@ const Hero = () => {
         <NavbarTwoColumns logo={<Logo xl />}>
           <li>
             <Link href="#why-we">
-              <a className="hover:text-primary-600 ">{t('why_we')}</a>
+              <a className="text-sm hover:text-primary-600">{t('about_us')}</a>
             </Link>
           </li>
           <li>
             <Link href="#categories">
-              <a className="hover:text-primary-600 ">{t('categories')}</a>
+              <a className="text-sm hover:text-primary-600 ">
+                {t('portfolio')}
+              </a>
             </Link>
           </li>
           <li>
             <Link href="#groups">
-              <a className="hover:text-primary-600">{t('groups')}</a>
+              <a className="text-sm hover:text-primary-600">{t('courses')}</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="#staff">
+              <a className="text-sm hover:text-primary-600">{t('staff')}</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="#license">
+              <a className="text-sm hover:text-primary-600">{t('license')}</a>
             </Link>
           </li>
           <li>
             <Link href="#contacts">
-              <a className="hover:text-primary-600 ">{t('contacts')}</a>
+              <a className="text-sm hover:text-primary-600 ">{t('contacts')}</a>
             </Link>
           </li>
           <li>
             <Link href={{ href: '/', query: 'lang=uz' }}>
               <a
-                className={`hover:text-primary-600 ${
+                className={`hover:text-primary-600 text-sm ${
                   route.locale === 'uz' && 'text-underline'
                 }`}
               >
@@ -52,7 +64,7 @@ const Hero = () => {
           <li>
             <Link href={{ href: '/', query: 'lang=ru' }}>
               <a
-                className={`hover:text-primary-600 ${
+                className={`hover:text-primary-600 text-sm ${
                   route.locale === 'ru' && 'underline-offset-1'
                 }`}
               >
@@ -65,17 +77,12 @@ const Hero = () => {
 
       <Section yPadding="pt-20 pb-32">
         <HeroOneButton
-          title={
-            <>
-              <Logo size={200} />
-              <br />
-              {t('header')}
-            </>
-          }
+          title={t('header_title')}
+          description={t('header_desc') as string}
           button={
-            <Link href="#contacts">
+            <Link href="#courses">
               <a>
-                <Button xl>{t('book')}</Button>
+                <Button xl>{t('courses')}</Button>
               </a>
             </Link>
           }

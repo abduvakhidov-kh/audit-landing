@@ -14,7 +14,9 @@ const VerticalCard = (props: IVerticalCardProps) => {
     'vertical-card',
     'm-4',
     'flex',
+    'flex-col',
     'items-center',
+    'justify-between',
     {
       'flex-row-reverse': props.reverse,
     }
@@ -24,37 +26,26 @@ const VerticalCard = (props: IVerticalCardProps) => {
 
   return (
     <div className={verticalFeatureClass}>
-      <div className="w-full h-full p-3 sm:w-7/12 image-wrapper">
+      <div className="">
         <img
           src={`${router.basePath}${props.image}`}
-          height="320"
-          width="420"
+          style={{ height: '300px' }}
           alt={props.imageAlt}
           loading="lazy"
         />
       </div>
-      <div className="w-full sm:w-1/2 sm:px-2">
+      <div className="w-full sm:px-2">
         {props.title && (
           <h3 className="pl-1 text-3xl font-semibold text-gray-900">
             {props.title}
           </h3>
         )}
         {props.description && (
-          <div className="pl-3 mt-2 text-lg font-semibold leading-6">
+          <div className="pl-3 mt-2 text-lg font-semibold leading-6 text-center">
             {props.description}
           </div>
         )}
       </div>
-      <style jsx>
-        {`
-          .image-wrapper {
-            min-width: 140px;
-            border: 1px solid black;
-            border-top-right-radius: 30%;
-            border-bottom-left-radius: 30%;
-          }
-        `}
-      </style>
     </div>
   );
 };

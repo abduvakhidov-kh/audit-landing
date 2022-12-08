@@ -12,31 +12,16 @@ const features: {
   description: string;
   image: string;
 }[] = [
-  { id: 0, description: 'period', image: '/assets/images/feature1.png' },
+  { id: 0, description: 'students', image: '/assets/images/feature1.jpg' },
   {
     id: 1,
-    description: 'detailed_statistic',
+    description: 'work_period',
     image: '/assets/images/feature2.png',
   },
   {
     id: 2,
-    description: 'individual_approach',
-    image: '/assets/images/feature3.png',
-  },
-  {
-    id: 3,
-    description: 'percent_passed',
-    image: '/assets/images/feature4.png',
-  },
-  {
-    id: 4,
-    description: 'student_amount',
-    image: '/assets/images/feature5.png',
-  },
-  {
-    id: 5,
-    description: 'instructors',
-    image: '/assets/images/feature6.png',
+    description: 'about_courses',
+    image: '/assets/images/feature3.jpg',
   },
 ];
 
@@ -53,9 +38,9 @@ const Info = () => {
   return (
     <div className={verticalFeatureClass}>
       <Section
-        id="why-we"
+        id="about_us"
         yPadding="py-6"
-        title={<span className="text-primary-800">{t('why_we')}</span>}
+        title={<span className="text-primary-600">{t('about_us')}</span>}
       >
         <div className="grid w-full lg:grid-cols-3 place-items-center md:grid-cols-2 sm:grid-cols-2">
           {features.map(({ id, description, image }) => (
