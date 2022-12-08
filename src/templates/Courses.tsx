@@ -1,0 +1,225 @@
+import { Button, Card } from 'flowbite-react';
+import { useTranslation } from 'next-export-i18n';
+
+import { CourseModal } from '../feature/Modal';
+import { Section } from '../layout/Section';
+
+const coursesList = [
+  {
+    id: 0,
+    title: 'Бухгалтерия с нуля до баланса',
+    img: './assets/images/accounting.jpg',
+    modalData: {
+      difficulty: 'easy',
+      period: '10 days',
+      price: '10$',
+      isBeginer: true,
+    },
+  },
+  {
+    id: 1,
+    title: '1С 8.3',
+    img: './assets/images/1c.png',
+    modalData: {
+      difficulty: 'easy',
+      period: '10 days',
+      price: '10$',
+      isBeginer: true,
+    },
+  },
+  {
+    id: 2,
+    title: 'Финансовое моделирование.',
+    img: './assets/images/finModeling.jpg',
+    modalData: {
+      difficulty: 'easy',
+      period: '10 days',
+      price: '10$',
+      isBeginer: true,
+    },
+  },
+  {
+    id: 3,
+    title: 'ACCA DipIFR',
+    img: './assets/images/accaDipfir.png',
+    modalData: {
+      difficulty: 'easy',
+      period: '10 days',
+      price: '10$',
+      isBeginer: true,
+    },
+  },
+  {
+    id: 4,
+    title:
+      '"Сертифицированный главный бухгалтер по МСФО" от британской ассоциации IAPBE',
+    img: './assets/images/iapbe.webp',
+    modalData: {
+      difficulty: 'easy',
+      period: '10 days',
+      price: '10$',
+      isBeginer: true,
+    },
+  },
+  {
+    id: 5,
+    img: './assets/images/picture1.jpg',
+    title: 'Международные Стандарты Финансовой Отчетности',
+    modalData: {
+      difficulty: 'easy',
+      period: '10 days',
+      price: '10$',
+      isBeginer: true,
+    },
+  },
+  {
+    id: 6,
+    img: './assets/images/picture2.jpg',
+    title: 'Общеустановленная система налогообложения Узбекистана',
+    modalData: {
+      difficulty: 'easy',
+      period: '10 days',
+      price: '10$',
+      isBeginer: true,
+    },
+  },
+  {
+    id: 7,
+    img: './assets/images/picture3.jpg',
+    title: 'ТМЗ: БУХГАЛТЕРСКИЙ УЧЕТ',
+    modalData: {
+      difficulty: 'easy',
+      period: '10 days',
+      price: '10$',
+      isBeginer: true,
+    },
+  },
+  {
+    id: 8,
+    img: './assets/images/picture10.jpg',
+    title: 'Сертифицированный финансовый директор (IAPBE)',
+    modalData: {
+      difficulty: 'easy',
+      period: '10 days',
+      price: '10$',
+      isBeginer: true,
+    },
+  },
+  {
+    id: 9,
+    img: './assets/images/picture5.jpg',
+    title: 'Профессиональный налоговый советник (IAPBE)',
+    modalData: {
+      difficulty: 'easy',
+      period: '10 days',
+      price: '10$',
+      isBeginer: true,
+    },
+  },
+  {
+    id: 10,
+    img: './assets/images/picture6.jpg',
+    title: 'Профессиональный финансовый советник (IAPBE)',
+    modalData: {
+      difficulty: 'easy',
+      period: '10 days',
+      price: '10$',
+      isBeginer: true,
+    },
+  },
+  {
+    id: 11,
+    img: './assets/images/picture7.jpg',
+    title: 'Бухгалтерский учет – ВЭД',
+    modalData: {
+      difficulty: 'easy',
+      period: '10 days',
+      price: '10$',
+      isBeginer: true,
+    },
+  },
+  {
+    id: 12,
+    img: './assets/images/picture8.jpg',
+    title: 'Изменения в трудовом кодексе',
+    modalData: {
+      difficulty: 'easy',
+      period: '10 days',
+      price: '10$',
+      isBeginer: true,
+    },
+  },
+  {
+    id: 13,
+    img: './assets/images/picture9.jpg',
+    title: 'Международные Стандарты Аудита',
+    modalData: {
+      difficulty: 'easy',
+      period: '10 days',
+      price: '10$',
+      isBeginer: true,
+    },
+  },
+  {
+    id: 14,
+    img: './assets/images/picture10.jpg',
+    title: 'Национальная и международная системы налогообложения',
+    modalData: {
+      difficulty: 'easy',
+      period: '10 days',
+      price: '10$',
+      isBeginer: true,
+    },
+  },
+];
+
+const Courses = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <Section
+        yPadding="py-0"
+        title={<span className="text-primary-800">{t('courses')}</span>}
+        id="carpark"
+      >
+        <div className="grid w-full gap-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
+          {coursesList.map(({ title, modalData, id, img }) => (
+            <div className="max-w-sm " key={id}>
+              <Card
+                imgAlt="Meaningful alt text for an image that is not purely decorative"
+                imgSrc={img}
+              >
+                <h5 className="mx-0 my-0 mt-auto text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  {title}
+                </h5>
+                <CourseModal
+                  button={
+                    <Button>
+                      Read more
+                      <svg
+                        className="w-4 h-4 ml-2 -mr-1"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </Button>
+                  }
+                  courseData={modalData}
+                />
+              </Card>
+            </div>
+          ))}
+        </div>
+      </Section>
+    </>
+  );
+};
+
+export { Courses };

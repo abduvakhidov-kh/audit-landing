@@ -53,6 +53,20 @@ const Info = () => {
             </Fragment>
           ))}
         </div>
+        <div
+          className="relative flex flex-col-reverse items-end mt-4"
+          style={{ height: '600px' }}
+        >
+          <img
+            src="./assets/images/graduated.jpg"
+            style={{ height: '600px', width: '100%' }}
+            className="absolute -z-10"
+            alt="section about graduated students"
+          />
+          <div className="absolute pl-3 my-4 text-lg font-semibold leading-relaxed text-center text-gray-100">
+            {t('about_students')}
+          </div>
+        </div>
       </Section>
     </div>
   );

@@ -13,7 +13,7 @@ const Logo = (props: ILogoProps) => {
     <span className={`text-gray-900 inline-flex items-center ${fontStyle}`}>
       <img
         className="mr-1 stroke-current text-primary-500"
-        src="/assets/images/logo.png"
+        src="/assets/images/logo.jpg"
         alt="auto kurs"
         width={size}
         height={size}
