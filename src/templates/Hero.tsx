@@ -19,19 +19,19 @@ const Hero = () => {
       <Section yPadding="py-5">
         <NavbarTwoColumns logo={<Logo xl />}>
           <li>
-            <Link href="#why-we">
+            <Link href="#about_us">
               <a className="text-sm hover:text-primary-600">{t('about_us')}</a>
             </Link>
           </li>
           <li>
-            <Link href="#categories">
+            <Link href="#porfolio">
               <a className="text-sm hover:text-primary-600 ">
                 {t('portfolio')}
               </a>
             </Link>
           </li>
           <li>
-            <Link href="#groups">
+            <Link href="#courses">
               <a className="text-sm hover:text-primary-600">{t('courses')}</a>
             </Link>
           </li>

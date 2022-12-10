@@ -1,19 +1,34 @@
+import { ReactNode } from 'react';
+
 import { Button, Card } from 'flowbite-react';
 import { useTranslation } from 'next-export-i18n';
 
 import { CourseModal } from '../feature/Modal';
 import { Section } from '../layout/Section';
+import { CourseDifficulty } from '../types';
 
-const coursesList = [
+const coursesList: {
+  id: number;
+  title: string;
+  img: string;
+  modalData: {
+    difficulty: CourseDifficulty;
+    period: string;
+    description: string;
+    price: string;
+    instructors: ReactNode;
+  };
+}[] = [
   {
     id: 0,
     title: 'Бухгалтерия с нуля до баланса',
     img: './assets/images/accounting.jpg',
     modalData: {
-      difficulty: 'easy',
+      difficulty: CourseDifficulty.BEGINER,
       period: '10 days',
       price: '10$',
-      isBeginer: true,
+      description: 'test description',
+      instructors: <>test</>,
     },
   },
   {
@@ -21,10 +36,11 @@ const coursesList = [
     title: '1С 8.3',
     img: './assets/images/picture14.png',
     modalData: {
-      difficulty: 'easy',
+      difficulty: CourseDifficulty.BEGINER,
       period: '10 days',
       price: '10$',
-      isBeginer: true,
+      description: 'test description',
+      instructors: <>test</>,
     },
   },
   {
@@ -32,10 +48,11 @@ const coursesList = [
     title: 'Финансовое моделирование.',
     img: './assets/images/picture13.jpg',
     modalData: {
-      difficulty: 'easy',
+      difficulty: CourseDifficulty.BEGINER,
       period: '10 days',
       price: '10$',
-      isBeginer: true,
+      description: 'test description',
+      instructors: <>test</>,
     },
   },
   {
@@ -43,10 +60,11 @@ const coursesList = [
     title: 'ACCA DipIFR',
     img: './assets/images/picture12.jpg',
     modalData: {
-      difficulty: 'easy',
+      difficulty: CourseDifficulty.BEGINER,
       period: '10 days',
       price: '10$',
-      isBeginer: true,
+      description: 'test description',
+      instructors: <>test</>,
     },
   },
   {
@@ -55,10 +73,11 @@ const coursesList = [
       '"Сертифицированный главный бухгалтер по МСФО" от британской ассоциации IAPBE',
     img: './assets/images/picture11.jpg',
     modalData: {
-      difficulty: 'easy',
+      difficulty: CourseDifficulty.BEGINER,
       period: '10 days',
       price: '10$',
-      isBeginer: true,
+      description: 'test description',
+      instructors: <>test</>,
     },
   },
   {
@@ -66,10 +85,11 @@ const coursesList = [
     img: './assets/images/picture1.jpg',
     title: 'Международные Стандарты Финансовой Отчетности',
     modalData: {
-      difficulty: 'easy',
+      difficulty: CourseDifficulty.BEGINER,
       period: '10 days',
       price: '10$',
-      isBeginer: true,
+      description: 'test description',
+      instructors: <>test</>,
     },
   },
   {
@@ -77,10 +97,11 @@ const coursesList = [
     img: './assets/images/picture2.jpg',
     title: 'Общеустановленная система налогообложения Узбекистана',
     modalData: {
-      difficulty: 'easy',
+      difficulty: CourseDifficulty.BEGINER,
       period: '10 days',
       price: '10$',
-      isBeginer: true,
+      description: 'test description',
+      instructors: <>test</>,
     },
   },
   {
@@ -88,10 +109,11 @@ const coursesList = [
     img: './assets/images/picture3.jpg',
     title: 'ТМЗ: БУХГАЛТЕРСКИЙ УЧЕТ',
     modalData: {
-      difficulty: 'easy',
+      difficulty: CourseDifficulty.BEGINER,
       period: '10 days',
       price: '10$',
-      isBeginer: true,
+      description: 'test description',
+      instructors: <>test</>,
     },
   },
   {
@@ -99,10 +121,11 @@ const coursesList = [
     img: './assets/images/picture4.png',
     title: 'Сертифицированный финансовый директор (IAPBE)',
     modalData: {
-      difficulty: 'easy',
+      difficulty: CourseDifficulty.BEGINER,
       period: '10 days',
       price: '10$',
-      isBeginer: true,
+      description: 'test description',
+      instructors: <>test</>,
     },
   },
   {
@@ -110,10 +133,11 @@ const coursesList = [
     img: './assets/images/picture5.jpg',
     title: 'Профессиональный налоговый советник (IAPBE)',
     modalData: {
-      difficulty: 'easy',
+      difficulty: CourseDifficulty.BEGINER,
       period: '10 days',
       price: '10$',
-      isBeginer: true,
+      description: 'test description',
+      instructors: <>test</>,
     },
   },
   {
@@ -121,10 +145,11 @@ const coursesList = [
     img: './assets/images/picture6.jpg',
     title: 'Профессиональный финансовый советник (IAPBE)',
     modalData: {
-      difficulty: 'easy',
+      difficulty: CourseDifficulty.BEGINER,
       period: '10 days',
       price: '10$',
-      isBeginer: true,
+      description: 'test description',
+      instructors: <>test</>,
     },
   },
   {
@@ -132,10 +157,11 @@ const coursesList = [
     img: './assets/images/picture7.jpg',
     title: 'Бухгалтерский учет – ВЭД',
     modalData: {
-      difficulty: 'easy',
+      difficulty: CourseDifficulty.BEGINER,
       period: '10 days',
       price: '10$',
-      isBeginer: true,
+      description: 'test description',
+      instructors: <>test</>,
     },
   },
   {
@@ -143,10 +169,11 @@ const coursesList = [
     img: './assets/images/picture8.jpg',
     title: 'Изменения в трудовом кодексе',
     modalData: {
-      difficulty: 'easy',
+      difficulty: CourseDifficulty.BEGINER,
       period: '10 days',
       price: '10$',
-      isBeginer: true,
+      description: 'test description',
+      instructors: <>test</>,
     },
   },
   {
@@ -154,10 +181,11 @@ const coursesList = [
     img: './assets/images/picture9.jpg',
     title: 'Международные Стандарты Аудита',
     modalData: {
-      difficulty: 'easy',
+      difficulty: CourseDifficulty.BEGINER,
       period: '10 days',
       price: '10$',
-      isBeginer: true,
+      description: 'test description',
+      instructors: <>test</>,
     },
   },
   {
@@ -165,10 +193,11 @@ const coursesList = [
     img: './assets/images/picture10.jpg',
     title: 'Национальная и международная системы налогообложения',
     modalData: {
-      difficulty: 'easy',
+      difficulty: CourseDifficulty.BEGINER,
       period: '10 days',
       price: '10$',
-      isBeginer: true,
+      description: 'test description',
+      instructors: <>test</>,
     },
   },
 ];
@@ -181,7 +210,7 @@ const Courses = () => {
       <Section
         yPadding="py-0"
         title={<span className="text-primary-800">{t('courses')}</span>}
-        id="carpark"
+        id="courses"
       >
         <div className="grid w-full gap-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
           {coursesList.map(({ title, modalData, id, img }) => (
@@ -197,7 +226,7 @@ const Courses = () => {
                 <CourseModal
                   button={
                     <Button>
-                      Read more
+                      {t('read_more')}
                       <svg
                         className="w-4 h-4 ml-2 -mr-1"
                         fill="currentColor"
