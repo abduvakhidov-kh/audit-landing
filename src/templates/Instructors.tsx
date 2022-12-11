@@ -2,7 +2,7 @@ import { Section } from '../layout/Section';
 
 const Instructors = () => {
   return (
-    <figure className="p-8 bg-slate-100 rounded-xl dark:bg-slate-800">
+    <figure className="p-8 mt-6 bg-slate-100 rounded-xl dark:bg-slate-800">
       <Section>
         <img
           className="w-24 h-24 mx-auto rounded-full"
