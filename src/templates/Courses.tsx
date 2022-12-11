@@ -225,7 +225,7 @@ const Courses = () => {
                 </h5>
                 <CourseModal
                   button={
-                    <Button>
+                    <Button className="bg-primary-500">
                       {t('read_more')}
                       <svg
                         className="w-4 h-4 ml-2 -mr-1"

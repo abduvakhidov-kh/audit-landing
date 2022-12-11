@@ -1,8 +1,10 @@
+import { ReactNode } from 'react';
+
 import className from 'classnames';
 
 type IButtonProps = {
   xl?: boolean;
-  children: string;
+  children: ReactNode;
 };
 
 const Button = (props: IButtonProps) => {
@@ -24,7 +26,7 @@ const Button = (props: IButtonProps) => {
           }
 
           .btn-base {
-            @apply text-lg font-semibold py-2 px-4;
+            @apply text-lg font-semibold  px-8 py-2;
           }
 
           .btn-xl {

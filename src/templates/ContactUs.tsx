@@ -8,7 +8,7 @@ const ContactUs = () => {
 
   return (
     <Section id="groups">
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container px-5 py-24 mx-auto bg-primary-50 background">
         <div className="flex flex-col w-full mb-12 text-center">
           <h1 className="mb-4 text-2xl font-medium text-gray-900 sm:text-3xl title-font">
             {t('contact-us_title')}
@@ -68,12 +68,20 @@ const ContactUs = () => {
               </div>
             </div>
             <div className="w-full p-2">
-              <button className="flex px-8 py-2 mx-auto text-lg text-white bg-indigo-500 border-0 rounded focus:outline-none hover:bg-indigo-600">
-                Button
+              <button className="flex px-8 py-2 mx-auto text-lg font-semibold text-white border-0 rounded bg-primary-500 focus:outline-none hover:bg-primary-600">
+                {t('send')}
               </button>
             </div>
           </div>
         </div>
+        <style jsx>
+          {`
+            .background {
+              border: 1px solid;
+              border-radius: 20px;
+            }
+          `}
+        </style>
       </div>
     </Section>
   );

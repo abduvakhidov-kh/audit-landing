@@ -39,7 +39,7 @@ const CourseModal = (props: IContactModalProps) => {
 
   return (
     <Fragment>
-      <span onClick={onClick} className="cursor-pointer">
+      <span onClick={onClick} className="cursor-pointer w-fit">
         {button}
       </span>
       <Modal show={isOpen} onClose={onClose}>
