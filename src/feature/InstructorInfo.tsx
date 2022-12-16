@@ -30,9 +30,11 @@ const InstructorInfo: FC<InstructorInfoProps> = ({ instructor }) => {
         <h5 className="mt-1 text-lg font-bold text-center">{name}</h5>
         <div className="pt-6 space-y-4">
           <blockquote>
-            <p className="text-lg font-medium">{about}</p>
+            <p className="mx-auto text-lg font-medium text-center">{about}</p>
           </blockquote>
-          <figcaption className="font-bold ">{experience}</figcaption>
+          <figcaption className="mx-auto font-bold text-center">
+            {experience}
+          </figcaption>
         </div>
       </div>
     </Section>
