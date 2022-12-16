@@ -24,13 +24,6 @@ const Hero = () => {
             </Link>
           </li>
           <li>
-            <Link href="#porfolio">
-              <a className="text-sm hover:text-primary-600 ">
-                {t('portfolio')}
-              </a>
-            </Link>
-          </li>
-          <li>
             <Link href="#courses">
               <a className="text-sm hover:text-primary-600">{t('courses')}</a>
             </Link>
@@ -38,11 +31,6 @@ const Hero = () => {
           <li>
             <Link href="#staff">
               <a className="text-sm hover:text-primary-600">{t('staff')}</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="#license">
-              <a className="text-sm hover:text-primary-600">{t('license')}</a>
             </Link>
           </li>
           <li>

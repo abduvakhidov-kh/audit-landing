@@ -5,15 +5,17 @@ import { useTranslation } from 'next-export-i18n';
 import Link from 'next/link';
 
 import { CourseDifficulty } from '../types';
+import { Paragraph } from './Typography';
 
 type IContactModalProps = {
   button?: ReactNode;
   courseData: {
     difficulty: CourseDifficulty;
-    period: string;
-    description: string;
-    price: string;
-    instructors: ReactNode;
+    period?: string;
+    description?: string;
+    destination?: string;
+    price?: string;
+    instructors?: ReactNode;
   };
 };
 
@@ -43,29 +45,35 @@ const CourseModal = (props: IContactModalProps) => {
         {button}
       </span>
       <Modal show={isOpen} onClose={onClose}>
-        <Modal.Header>{t('details')}</Modal.Header>
+        <Modal.Header>
+          <span className="tracking-wide font-bolder">{t('details')}</span>
+        </Modal.Header>
         <Modal.Body>
           <div className="flex flex-col gap-4">
             <div className="flex gap-2">
+              <h6 className="font-bold text-primary-500 ">
+                Course difficulty:
+              </h6>
               {courseDifficulty}
-              <Badge color="info">{courseData.period}</Badge>
             </div>
-            <p className="">
-              {t('price')} {courseData.price}
-            </p>
-            <h5>{t('description')}</h5>
-            <p className="text-lg font-semibold leading-relaxed text-center text-gray-100">
-              {t(`${courseData.description}`)}
-            </p>
-            <h5>{t('certificates')}</h5>
-            <p className="">{courseData.price}</p>
-            <h5>{t('teachers')}</h5>
-            <p>{courseData.instructors}</p>
+            <Paragraph
+              title={t('forWhom') as string}
+              description={t(`${courseData.destination}`)}
+            />
+            <Paragraph
+              title={t('description') as string}
+              description={t(`${courseData.description}`)}
+            />
+
+            <Paragraph
+              title={t('duration') as string}
+              description={t(`${courseData.period}`)}
+            />
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={onClose}>
-            <Link href="#contacts">{t('book')}</Link>
+          <Button onClick={onClose} className="mx-auto">
+            <Link href="#contacts">{t('contacts')}</Link>
           </Button>
         </Modal.Footer>
       </Modal>

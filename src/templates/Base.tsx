@@ -1,5 +1,6 @@
 import { Meta } from '../layout/Meta';
 import { AppConfig } from '../utils/AppConfig';
+import { Comments } from './Comments';
 import { ContactUs } from './ContactUs';
 import { Courses } from './Courses';
 import { Documents } from './Documents';
@@ -16,6 +17,7 @@ const Base = () => (
     <Courses />
     <Instructors />
     <Documents />
+    <Comments />
     <ContactUs />
     <Footer />
   </div>

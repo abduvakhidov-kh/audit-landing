@@ -1,6 +1,7 @@
 /**
  * @type {import('@types/tailwindcss/tailwind-config').TailwindConfig}
  */
+
 module.exports = {
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
@@ -43,6 +44,18 @@ module.exports = {
           700: '#4a5568',
           800: '#2d3748',
           900: '#1a202c',
+        },
+        blue: {
+          50: '#FFF4EB',
+          100: '#FFEBDB',
+          200: '#FFD8B8',
+          300: '#FEC494',
+          400: '#FEB171',
+          500: '#FE9D4C',
+          600: '#FE780C',
+          700: '#FE9D4C',
+          800: '#843C01',
+          900: '#421E00',
         },
       },
       lineHeight: {

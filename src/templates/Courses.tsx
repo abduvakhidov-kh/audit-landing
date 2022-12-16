@@ -13,21 +13,21 @@ const coursesList: {
   img: string;
   modalData: {
     difficulty: CourseDifficulty;
-    period: string;
-    description: string;
-    price: string;
-    instructors: ReactNode;
+    period?: string;
+    description?: string;
+    destination?: string;
+    price?: string;
+    instructors?: ReactNode;
   };
 }[] = [
   {
     id: 0,
-    title: 'Бухгалтерия с нуля до баланса',
+    title: 'course_1',
     img: './assets/images/accounting.jpg',
     modalData: {
       difficulty: CourseDifficulty.BEGINER,
-      period: '10 days',
-      price: '10$',
-      description: 'test description',
+      period: 'course_1_dur',
+      description: 'xourse_1_desc',
       instructors: <>test</>,
     },
   },
@@ -37,21 +37,20 @@ const coursesList: {
     img: './assets/images/picture14.png',
     modalData: {
       difficulty: CourseDifficulty.BEGINER,
-      period: '10 days',
-      price: '10$',
-      description: 'test description',
+      period: 'course_1_dur',
+      description: 'xourse_1_desc',
       instructors: <>test</>,
     },
   },
   {
     id: 2,
-    title: 'Финансовое моделирование.',
+    title: 'course_2',
     img: './assets/images/picture13.jpg',
     modalData: {
       difficulty: CourseDifficulty.BEGINER,
-      period: '10 days',
-      price: '10$',
-      description: 'test description',
+      period: 'course_2_dur',
+      destination: 'course_2_for',
+      description: 'course_2_desc',
       instructors: <>test</>,
     },
   },
@@ -60,46 +59,45 @@ const coursesList: {
     title: 'ACCA DipIFR',
     img: './assets/images/picture12.jpg',
     modalData: {
-      difficulty: CourseDifficulty.BEGINER,
-      period: '10 days',
-      price: '10$',
-      description: 'test description',
+      difficulty: CourseDifficulty.INTERMEDIATE,
+      period: 'empty_info',
+      destination: 'course_14_for',
+      description: 'course_14_desc',
       instructors: <>test</>,
     },
   },
   {
     id: 4,
-    title:
-      '"Сертифицированный главный бухгалтер по МСФО" от британской ассоциации IAPBE',
+    title: 'course_3',
     img: './assets/images/picture11.jpg',
     modalData: {
-      difficulty: CourseDifficulty.BEGINER,
-      period: '10 days',
-      price: '10$',
-      description: 'test description',
+      difficulty: CourseDifficulty.INTERMEDIATE,
+      period: 'empty_info',
+      destination: 'course_3_for',
+      description: 'course_3_desc',
       instructors: <>test</>,
     },
   },
   {
     id: 5,
     img: './assets/images/picture1.jpg',
-    title: 'Международные Стандарты Финансовой Отчетности',
+    title: 'course_4',
     modalData: {
-      difficulty: CourseDifficulty.BEGINER,
-      period: '10 days',
-      price: '10$',
-      description: 'test description',
+      difficulty: CourseDifficulty.INTERMEDIATE,
+      period: 'empty_info',
+      destination: 'course_4_for',
+      description: 'course_4_desc',
       instructors: <>test</>,
     },
   },
   {
     id: 6,
     img: './assets/images/picture2.jpg',
-    title: 'Общеустановленная система налогообложения Узбекистана',
+    title: 'course_5',
     modalData: {
-      difficulty: CourseDifficulty.BEGINER,
-      period: '10 days',
-      price: '10$',
+      difficulty: CourseDifficulty.INTERMEDIATE,
+      period: 'course_5_dur',
+      destination: 'course_5_for',
       description: 'test description',
       instructors: <>test</>,
     },
@@ -107,96 +105,97 @@ const coursesList: {
   {
     id: 7,
     img: './assets/images/picture3.jpg',
-    title: 'ТМЗ: БУХГАЛТЕРСКИЙ УЧЕТ',
+    title: 'course_6',
     modalData: {
-      difficulty: CourseDifficulty.BEGINER,
-      period: '10 days',
-      price: '10$',
-      description: 'test description',
+      difficulty: CourseDifficulty.ADVANCED,
+      period: 'empty_info',
+      destination: 'course_6_for',
+
+      description: '',
       instructors: <>test</>,
     },
   },
   {
     id: 8,
     img: './assets/images/picture4.png',
-    title: 'Сертифицированный финансовый директор (IAPBE)',
+    title: 'course_7',
     modalData: {
       difficulty: CourseDifficulty.BEGINER,
-      period: '10 days',
-      price: '10$',
-      description: 'test description',
+      period: 'course_7_dur',
+      description: 'course_7_desc',
+      destination: 'course_7_for',
       instructors: <>test</>,
     },
   },
   {
     id: 9,
     img: './assets/images/picture5.jpg',
-    title: 'Профессиональный налоговый советник (IAPBE)',
+    title: 'course_8',
     modalData: {
-      difficulty: CourseDifficulty.BEGINER,
-      period: '10 days',
-      price: '10$',
-      description: 'test description',
+      difficulty: CourseDifficulty.INTERMEDIATE,
+      period: 'empty_info',
+      destination: 'course_8_for',
+      description: 'course_8_desc',
       instructors: <>test</>,
     },
   },
   {
     id: 10,
     img: './assets/images/picture6.jpg',
-    title: 'Профессиональный финансовый советник (IAPBE)',
+    title: 'course_9',
     modalData: {
-      difficulty: CourseDifficulty.BEGINER,
-      period: '10 days',
-      price: '10$',
-      description: 'test description',
+      difficulty: CourseDifficulty.INTERMEDIATE,
+      period: 'empty_info',
+      description: 'course_9_desc',
+      destination: 'course_9_for',
       instructors: <>test</>,
     },
   },
   {
     id: 11,
     img: './assets/images/picture7.jpg',
-    title: 'Бухгалтерский учет – ВЭД',
+    title: 'course_10',
     modalData: {
       difficulty: CourseDifficulty.BEGINER,
-      period: '10 days',
-      price: '10$',
-      description: 'test description',
+      period: 'empty_info',
+      description: 'course_10_desc',
+      destination: 'course_10_for',
       instructors: <>test</>,
     },
   },
   {
     id: 12,
     img: './assets/images/picture8.jpg',
-    title: 'Изменения в трудовом кодексе',
+    title: 'course_11',
     modalData: {
-      difficulty: CourseDifficulty.BEGINER,
-      period: '10 days',
-      price: '10$',
-      description: 'test description',
+      difficulty: CourseDifficulty.INTERMEDIATE,
+      period: 'course_11_dur',
+      description: 'course_11_desc',
+      destination: 'course_11_for',
       instructors: <>test</>,
     },
   },
   {
     id: 13,
     img: './assets/images/picture9.jpg',
-    title: 'Международные Стандарты Аудита',
+    title: 'course_12',
     modalData: {
-      difficulty: CourseDifficulty.BEGINER,
-      period: '10 days',
-      price: '10$',
-      description: 'test description',
+      difficulty: CourseDifficulty.INTERMEDIATE,
+      period: 'empty_info',
+      description: 'course_12_desc',
+      destination: 'course_12_for',
       instructors: <>test</>,
     },
   },
   {
     id: 14,
     img: './assets/images/picture10.jpg',
-    title: 'Национальная и международная системы налогообложения',
+    title: 'course_13',
     modalData: {
       difficulty: CourseDifficulty.BEGINER,
-      period: '10 days',
-      price: '10$',
-      description: 'test description',
+      period: 'empty_info',
+      description: 'course_13_desc',
+      destination: 'course_13_for',
       instructors: <>test</>,
     },
   },
@@ -209,19 +208,19 @@ const Courses = () => {
     <>
       <Section
         yPadding="py-0"
-        title={<span className="text-primary-800">{t('courses')}</span>}
+        title={<span className="text-primary-600">{t('courses')}</span>}
         id="courses"
       >
         <div className="grid w-full gap-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
           {coursesList.map(({ title, modalData, id, img }) => (
-            <div className="max-w-sm " key={id}>
+            <div className="max-w-sm mx-auto" key={id}>
               <Card
                 className="h-full"
                 imgAlt="Meaningful alt text for an image that is not purely decorative"
                 imgSrc={img}
               >
                 <h5 className="mx-0 my-0 mt-auto text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  {title}
+                  {t(`${title}`)}
                 </h5>
                 <CourseModal
                   button={

@@ -42,28 +42,27 @@ const Info = () => {
         yPadding="py-6"
         title={<span className="text-primary-600">{t('about_us')}</span>}
       >
-        <div className="grid w-full lg:grid-cols-3 place-items-center md:grid-cols-2 sm:grid-cols-2">
-          {features.map(({ id, description, image }) => (
-            <Fragment key={id}>
-              <VerticalCard
-                description={t(`${description}`)}
-                imageAlt={t(`${description}`)}
-                image={image}
-              />
-            </Fragment>
-          ))}
+        <div>
+          <div className="grid w-full lg:grid-cols-3 place-items-center md:grid-cols-2 sm:grid-cols-2">
+            {features.map(({ id, description, image }) => (
+              <Fragment key={id}>
+                <VerticalCard
+                  description={t(`${description}`)}
+                  imageAlt={t(`${description}`)}
+                  image={image}
+                />
+              </Fragment>
+            ))}
+          </div>
         </div>
-        <div
-          className="relative flex flex-col-reverse items-end mt-4"
-          style={{ height: '600px' }}
-        >
+        <div className="flex flex-col mt-4 h-fit">
           <img
             src="./assets/images/graduated.jpg"
-            style={{ height: '600px', width: '100%' }}
-            className="absolute -z-10"
+            style={{ height: '600px', width: '100%', objectFit: 'cover' }}
+            className=""
             alt="section about graduated students"
           />
-          <div className="absolute pl-3 my-4 text-lg font-semibold leading-relaxed text-center text-gray-100">
+          <div className="pl-3 mt-4 text-lg font-semibold leading-relaxed text-center text-primary-700 ">
             {t('about_students')}
           </div>
         </div>
