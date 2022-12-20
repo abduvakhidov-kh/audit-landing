@@ -62,7 +62,7 @@ const Info = () => {
             className=""
             alt="section about graduated students"
           />
-          <div className="pl-3 mt-4 text-lg font-semibold leading-relaxed text-center text-primary-700 ">
+          <div className="my-4 mt-2 text-lg font-semibold leading-relaxed text-center text-primary-700 ">
             {t('about_students')}
           </div>
         </div>

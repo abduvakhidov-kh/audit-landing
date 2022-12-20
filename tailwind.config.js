@@ -1,6 +1,8 @@
 /**
  * @type {import('@types/tailwindcss/tailwind-config').TailwindConfig}
  */
+// eslint-disable-next-line import/no-extraneous-dependencies
+const colors = require('tailwindcss/colors');
 
 module.exports = {
   content: [
@@ -22,18 +24,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: {
-          50: '#FFF4EB',
-          100: '#FFEBDB',
-          200: '#FFD8B8',
-          300: '#FEC494',
-          400: '#FEB171',
-          500: '#FE9D4C',
-          600: '#FE780C',
-          700: '#C65A01',
-          800: '#843C01',
-          900: '#421E00',
-        },
+        primary: colors.red,
         gray: {
           100: '#f7fafc',
           200: '#edf2f7',
@@ -46,16 +37,16 @@ module.exports = {
           900: '#1a202c',
         },
         blue: {
-          50: '#FFF4EB',
-          100: '#FFEBDB',
-          200: '#FFD8B8',
-          300: '#FEC494',
-          400: '#FEB171',
-          500: '#FE9D4C',
-          600: '#FE780C',
-          700: '#FE9D4C',
-          800: '#843C01',
-          900: '#421E00',
+          50: '#fef2f2',
+          100: '#fee2e2',
+          200: '#fecaca',
+          300: '#fca5a5',
+          400: '#f87171',
+          500: '#ef4444',
+          600: '#dc2626',
+          700: '#dc2626',
+          800: '#b91c1c',
+          900: '#7f1d1d',
         },
       },
       lineHeight: {

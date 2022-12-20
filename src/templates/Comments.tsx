@@ -11,11 +11,11 @@ const commentsList = [
 const Comments = () => {
   const { t } = useTranslation();
   return (
-    <figure className="p-8 mt-6 bg-slate-100 rounded-xl dark:bg-slate-800">
+    <figure className="p-8 bg-slate-100 rounded-xl dark:bg-slate-800">
       {commentsList.map((comment, index) => (
         <Fragment key={index}>
           <Section>
-            <h5 className="w-full text-2xl font-bold text-center text-primary-600">
+            <h5 className="w-full text-2xl font-bold text-center text-primary-500">
               {t('comments')}
             </h5>
             <div className="flex flex-col items-center justify-center">

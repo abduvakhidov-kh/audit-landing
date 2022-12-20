@@ -1,9 +1,12 @@
 import { Fragment } from 'react';
 
 import { Carousel } from 'flowbite-react';
+import { useTranslation } from 'next-export-i18n';
 import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
 
+import { Background } from '../background/Background';
 import { InstructorInfo } from '../feature/InstructorInfo';
+import { Section } from '../layout/Section';
 
 const instructorsLists = [
   {
@@ -37,19 +40,30 @@ const instructorsLists = [
 ];
 
 const Instructors = () => {
+  const { t } = useTranslation();
+
   return (
-    <figure className="p-8 mt-6 bg-slate-100 rounded-xl dark:bg-slate-800">
-      <Carousel
-        leftControl={<AiFillCaretLeft color="black" size={20} />}
-        rightControl={<AiFillCaretRight color="black" size={20} />}
+    <Background img="/assets/images/instructors-bg.jpg">
+      <Section
+        id="staff"
+        title={
+          <h2 className="text-2xl font-medium text-primary-500 sm:text-3xl title-font">
+            {t('explor_instructors')}
+          </h2>
+        }
       >
-        {instructorsLists.map((instructor, index) => (
-          <Fragment key={index}>
-            <InstructorInfo instructor={instructor} />
-          </Fragment>
-        ))}
-      </Carousel>
-    </figure>
+        <Carousel
+          leftControl={<AiFillCaretLeft color="black" size={20} />}
+          rightControl={<AiFillCaretRight color="black" size={20} />}
+        >
+          {instructorsLists.map((instructor, index) => (
+            <Fragment key={index}>
+              <InstructorInfo instructor={instructor} />
+            </Fragment>
+          ))}
+        </Carousel>
+      </Section>
+    </Background>
   );
 };
 

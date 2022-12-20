@@ -1,8 +1,9 @@
-import { ReactNode } from 'react';
+import { ReactNode, useMemo, useState } from 'react';
 
 import { Button, Card } from 'flowbite-react';
 import { useTranslation } from 'next-export-i18n';
 
+import { Background } from '../background/Background';
 import { CourseModal } from '../feature/Modal';
 import { Section } from '../layout/Section';
 import { CourseDifficulty } from '../types';
@@ -203,51 +204,68 @@ const coursesList: {
 
 const Courses = () => {
   const { t } = useTranslation();
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleClick = () => {
+    setIsExpanded((prevState) => !prevState);
+  };
+
+  const coursesData = useMemo(() => {
+    if (isExpanded) {
+      return coursesList;
+    }
+    return coursesList.slice(0, 8);
+  }, [isExpanded]);
 
   return (
-    <>
+    <Background img="/assets/images/courses-bg.jpg">
       <Section
         yPadding="py-0"
         title={<span className="text-primary-600">{t('courses')}</span>}
         id="courses"
       >
-        <div className="grid w-full gap-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
-          {coursesList.map(({ title, modalData, id, img }) => (
-            <div className="max-w-sm mx-auto" key={id}>
-              <Card
-                className="h-full"
-                imgAlt="Meaningful alt text for an image that is not purely decorative"
-                imgSrc={img}
-              >
-                <h5 className="mx-0 my-0 mt-auto text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  {t(`${title}`)}
-                </h5>
-                <CourseModal
-                  button={
-                    <Button className="bg-primary-500">
-                      {t('read_more')}
-                      <svg
-                        className="w-4 h-4 ml-2 -mr-1"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </Button>
-                  }
-                  courseData={modalData}
-                />
-              </Card>
-            </div>
-          ))}
+        <div className="w-full pb-12">
+          <div className="grid gap-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
+            {coursesData.map(({ title, modalData, id, img }) => (
+              <div className="max-w-sm mx-auto" key={id}>
+                <Card
+                  className="h-full"
+                  imgAlt="Meaningful alt text for an image that is not purely decorative"
+                  imgSrc={img}
+                >
+                  <h5 className="mx-0 my-0 mt-auto text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    {t(`${title}`)}
+                  </h5>
+                  <CourseModal
+                    button={
+                      <Button className="bg-primary-500">
+                        {t('read_more')}
+                        <svg
+                          className="w-4 h-4 ml-2 -mr-1"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </Button>
+                    }
+                    courseData={modalData}
+                  />
+                </Card>
+              </div>
+            ))}
+          </div>
+          <Button className="px-3 py-1 mx-auto mt-4" onClick={handleClick}>
+            Expand
+          </Button>
         </div>
       </Section>
-    </>
+    </Background>
   );
 };
 

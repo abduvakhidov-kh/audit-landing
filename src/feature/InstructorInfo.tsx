@@ -13,7 +13,6 @@ interface InstructorInfoProps {
 
 const InstructorInfo: FC<InstructorInfoProps> = ({ instructor }) => {
   const { name, img, about, experience } = instructor;
-
   return (
     <Section>
       <div className="flex flex-col items-center justify-center">
@@ -27,12 +26,16 @@ const InstructorInfo: FC<InstructorInfoProps> = ({ instructor }) => {
             height="512"
           />
         </div>
-        <h5 className="mt-1 text-lg font-bold text-center">{name}</h5>
+        <h5 className="mt-1 text-lg font-bold text-center text-primary-500">
+          {name}
+        </h5>
         <div className="pt-6 space-y-4">
           <blockquote>
-            <p className="mx-auto text-lg font-medium text-center">{about}</p>
+            <p className="w-2/3 mx-auto text-lg font-medium text-center text-gray-800">
+              {about}
+            </p>
           </blockquote>
-          <figcaption className="mx-auto font-bold text-center">
+          <figcaption className="mx-auto font-bold text-center text-gray-900">
             {experience}
           </figcaption>
         </div>

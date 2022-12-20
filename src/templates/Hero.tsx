@@ -15,33 +15,33 @@ const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <Background color="bg-gray-100">
+    <Background img="/assets/images/hero-bg.jpg">
       <Section yPadding="py-5">
         <NavbarTwoColumns logo={<Logo xl />}>
           <li>
             <Link href="#about_us">
-              <a className="text-sm hover:text-primary-600">{t('about_us')}</a>
+              <a className="text-xl hover:text-primary-800">{t('about_us')}</a>
             </Link>
           </li>
           <li>
             <Link href="#courses">
-              <a className="text-sm hover:text-primary-600">{t('courses')}</a>
+              <a className="text-xl hover:text-primary-800">{t('courses')}</a>
             </Link>
           </li>
           <li>
             <Link href="#staff">
-              <a className="text-sm hover:text-primary-600">{t('staff')}</a>
+              <a className="text-xl hover:text-primary-800">{t('staff')}</a>
             </Link>
           </li>
           <li>
             <Link href="#contacts">
-              <a className="text-sm hover:text-primary-600 ">{t('contacts')}</a>
+              <a className="text-xl hover:text-primary-800 ">{t('contacts')}</a>
             </Link>
           </li>
           <li>
             <Link href={{ href: '/', query: 'lang=uz' }}>
               <a
-                className={`hover:text-primary-600 text-sm ${
+                className={`hover:text-primary-800 text-xl ${
                   route.locale === 'uz' && 'text-underline'
                 }`}
               >
@@ -52,7 +52,7 @@ const Hero = () => {
           <li>
             <Link href={{ href: '/', query: 'lang=ru' }}>
               <a
-                className={`hover:text-primary-600 text-sm ${
+                className={`hover:text-primary-800 text-xl ${
                   route.locale === 'ru' && 'underline-offset-1'
                 }`}
               >
