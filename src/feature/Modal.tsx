@@ -37,7 +37,7 @@ const CourseModal = (props: IContactModalProps) => {
       default:
         return <Badge color="success">{t('beginer')}</Badge>;
     }
-  }, [courseData]);
+  }, [courseData, t]);
 
   return (
     <Fragment>
