@@ -13,7 +13,7 @@ import { Info } from './Info';
 import { Instructors } from './Instructors';
 
 const Base = () => (
-  <div className="overflow-y-hidden antialiased text-gray-600">
+  <div className="overflow-x-hidden antialiased text-gray-600">
     <Meta title={AppConfig.title} description={AppConfig.description} />
     <Hero />
     <Info />

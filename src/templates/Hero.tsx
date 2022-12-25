@@ -1,5 +1,4 @@
 import { XyzTransition } from '@animxyz/react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { useTranslation } from 'next-export-i18n';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
