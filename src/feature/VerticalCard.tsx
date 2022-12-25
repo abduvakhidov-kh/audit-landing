@@ -25,8 +25,8 @@ const VerticalCard = (props: IVerticalCardProps) => {
   const router = useRouter();
 
   return (
-    <div className={verticalFeatureClass}>
-      <div className="">
+    <div className={`${verticalFeatureClass} xyz-nested`}>
+      <div>
         <img
           src={`${router.basePath}${props.image}`}
           style={{ height: '300px' }}

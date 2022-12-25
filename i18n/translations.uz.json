@@ -62,7 +62,7 @@
     "duration": "Davomiyligi:",
     "empty_info": "Tafsilotlar uchun bizga qo'ng'iroq qiling yoki yozing.",
     "explor_instructors": "O'qituvchilar bilan tanishing",
-    "forWhom": "Kimdan:",
+    "forWhom": "Kimga:",
     "header_desc": "O‘zbekiston Auditorlar palatasi qoshidagi “AUDIT FORWARD” NOU respublikaning moliya va audit sohasida akkreditatsiyadan o‘tgan xalqaro o‘quv markazlaridan biri bo‘lib, xalqaro moliyaviy hisobot standartlari va xalqaro auditga muvofiq buxgalterlar va auditorlarni tayyorlash bo‘yicha yetakchi o‘rinni egallaydi. standartlar.",
     "header_title": "NOU \"AUDIT FORWARD\"",
     "intermediate": "O'rtacha darajasi",
@@ -78,6 +78,22 @@
     "tel": "Telefon raqami",
     "work_period": "2001 yildan beri taʼlim sohasida faoliyat yuritamiz.",
     "comments": "Sharhlar",
-    "send": "Yuborish"
+    "send": "Yuborish",
+    "more": "Ko'proq",
+    "less": "Kamroq",
+    "instr_1_about": "Tashkilot, muloqot qobiliyatlari, sezgirlik, diqqatlilik, yaxshi diksiya, tinglovchilar bilan ishlash qobiliyati, faollik, har tomonlama rivojlanish, o'qitishga muhabbat.",
+    "instr_1_exp": "11 yillik ish tajribasi",
+    "instr_1_name": "Mamatov Alisher Danabaevich",
+    "instr_2_about": "ACCA, moliyaviy hisob (CAP / CIPA), IFRS asoslari, DipIFR (rus) bo'yicha o'qituvchi.",
+    "instr_2_exp": "10 yillik ish tajribasi",
+    "instr_2_name": "Normatov Rustam Chorshanbievich",
+    "instr_3_about": "Yillik tovar va materiallar balansi tannarxni hisoblash Ish haqini hisoblash. Materiallar hisobi Statistik hisobot Kassa operatsiyalari. Asosiy vositalar Birlamchi hujjatlar Foyda va zararlar to'g'risidagi hisobot. Soliqlarni hisoblash Soliq hisoboti Buxgalteriya hisoboti Kassa hujjatlari Buxgalteriya hisobi 1C:Korxona 8.",
+    "instr_3_exp": "12 yillik ish tajribasi",
+    "instr_3_name": "Mamurjonov Olimjon Ma'murjon o'g'li",
+    "instr_4_about": "2017 yildan beri NABUda moliyaviy buxgalteriya hisobi 1, Boshqaruv hisobi 1, UFRS bo'yicha moliyaviy hisobotlar bo'yicha professional trener.",
+    "instr_4_exp": "Buxgalteriya hisobi bo'yicha 35 yillik doimiy tajriba. Ular orasida: 15 yillik moliyaviy direktor va auditor.",
+    "instr_4_name": "Kim Anjelika Anatolyevna",
+    "comments_1": "Trener Anjelika Anatolyevna Kim ishtirokidagi kurs UFRSning asosiy maqsadi va tamoyillarini tushunishga, unga boshqa tomondan qarashga imkon berdi. Batafsilroq va chuqurroq o'rganishga qiziqish bor edi. Kelajakda standartlarni batafsilroq tushunishga yordam beradigan juda professional tarzda taqdim etilgan ma'lumotlar. UFRS amaliyotini qo'llash bo'yicha umumiy tushunchalar nuqtai nazaridan biz juda batafsil fikrga ega bo'ldik. Menga materialni taqdim etish tartibi va ketma-ketligi juda yoqdi. Muammoni hal qilishni tushunish uchun juda foydali. Rahmat!",
+    "location_address": "Toshkent shahri Mirzo Ulug'bek tumani Qori Niyozov. D.39"
   }
 }

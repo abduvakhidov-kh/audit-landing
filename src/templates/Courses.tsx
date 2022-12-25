@@ -1,5 +1,6 @@
 import { ReactNode, useMemo, useState } from 'react';
 
+import { XyzTransition } from '@animxyz/react';
 import { Button, Card } from 'flowbite-react';
 import { useTranslation } from 'next-export-i18n';
 
@@ -24,22 +25,23 @@ const coursesList: {
   {
     id: 0,
     title: 'course_1',
-    img: './assets/images/accounting.jpg',
+    img: './assets/images/picture6.jpg',
     modalData: {
       difficulty: CourseDifficulty.BEGINER,
       period: 'course_1_dur',
       description: 'xourse_1_desc',
+      destination: 'empty_info',
       instructors: <>test</>,
     },
   },
   {
     id: 1,
     title: '1С 8.3',
-    img: './assets/images/picture14.png',
+    img: './assets/images/picture10.jpg',
     modalData: {
       difficulty: CourseDifficulty.BEGINER,
       period: 'course_1_dur',
-      description: 'xourse_1_desc',
+      description: 'course_1_desc',
       instructors: <>test</>,
     },
   },
@@ -118,7 +120,7 @@ const coursesList: {
   },
   {
     id: 8,
-    img: './assets/images/picture4.png',
+    img: './assets/images/picture8.jpg',
     title: 'course_7',
     modalData: {
       difficulty: CourseDifficulty.BEGINER,
@@ -218,52 +220,57 @@ const Courses = () => {
   }, [isExpanded]);
 
   return (
-    <Background img="/assets/images/courses-bg.jpg">
+    <Background img="/assets/images/bg.jpg">
       <Section
         yPadding="py-0"
-        title={<span className="text-primary-600">{t('courses')}</span>}
+        title={<span className="py-10 text-primary-600">{t('courses')}</span>}
         id="courses"
       >
-        <div className="w-full pb-12">
-          <div className="grid gap-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
-            {coursesData.map(({ title, modalData, id, img }) => (
-              <div className="max-w-sm mx-auto" key={id}>
-                <Card
-                  className="h-full"
-                  imgAlt="Meaningful alt text for an image that is not purely decorative"
-                  imgSrc={img}
+        <XyzTransition
+          appearVisible
+          duration="auto"
+          xyz="fade stagger duration-10 delay-2 ease-out-back"
+        >
+          <div className="w-full py-5">
+            <div className="grid gap-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
+              {coursesData.map(({ title, modalData, id, img }) => (
+                <div
+                  className="max-w-sm mx-auto xyz-nested drop-shadow-xl"
+                  key={id}
                 >
-                  <h5 className="mx-0 my-0 mt-auto text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    {t(`${title}`)}
-                  </h5>
-                  <CourseModal
-                    button={
-                      <Button className="bg-primary-500">
-                        {t('read_more')}
-                        <svg
-                          className="w-4 h-4 ml-2 -mr-1"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </Button>
-                    }
-                    courseData={modalData}
-                  />
-                </Card>
-              </div>
-            ))}
+                  <Card className="h-full" imgAlt={t(title)} imgSrc={img}>
+                    <h5 className="mx-0 my-auto text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      {t(title)}
+                    </h5>
+                    <CourseModal
+                      button={
+                        <Button className="bg-primary-500">
+                          {t('read_more')}
+                          <svg
+                            className="w-4 h-4 ml-2 -mr-1"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                        </Button>
+                      }
+                      courseData={modalData}
+                    />
+                  </Card>
+                </div>
+              ))}
+            </div>
+            <Button className="px-3 py-1 mx-auto mt-5" onClick={handleClick}>
+              {isExpanded ? t('less') : t('more')}
+            </Button>
           </div>
-          <Button className="px-3 py-1 mx-auto mt-4" onClick={handleClick}>
-            Expand
-          </Button>
-        </div>
+        </XyzTransition>
       </Section>
     </Background>
   );

@@ -1,9 +1,6 @@
 import { useTranslation } from 'next-export-i18n';
-import Link from 'next/link';
-// import { useTranslation } from 'react-i18next';
 
 import { Background } from '../background/Background';
-import { Button } from '../button/Button';
 import { Section } from '../layout/Section';
 
 const Documents = () => {
@@ -12,8 +9,11 @@ const Documents = () => {
   return (
     <Background color="bg-gray-100">
       <Section
+        yPadding="py-5 pb-10"
         id="certificates"
-        title={<span className="text-primary-500">{t('certificates')}</span>}
+        title={
+          <span className="mb-5 text-primary-500">{t('certificates')}</span>
+        }
       >
         <div className="flex items-center justify-center gap-2">
           <div className="flex flex-col items-center gap-4">
@@ -26,11 +26,6 @@ const Documents = () => {
                 />
               </div>
             </div>
-            <Link href="assets/images/certificate.jpg">
-              <a target="_blank">
-                <Button>{t('read_more')}</Button>
-              </a>
-            </Link>
           </div>
         </div>
       </Section>

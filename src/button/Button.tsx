@@ -16,7 +16,7 @@ const Button = (props: IButtonProps) => {
   });
 
   return (
-    <div className={btnClass}>
+    <div className={`${btnClass} `}>
       {props.children}
 
       <style jsx>

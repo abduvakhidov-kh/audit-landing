@@ -10,32 +10,27 @@ import { Section } from '../layout/Section';
 
 const instructorsLists = [
   {
-    name: 'Маматов Алишер Данабаевич',
-    about:
-      'Организованность, коммуникабельность, отзывчивость, внимательность, хорошая дикция, умение работать с аудиторией, активность, всесторонняя развитость, любовь к преподаванию.',
-    experience: '11 лет опыта работы',
+    name: 'instr_1_name',
+    about: 'instr_1_about',
+    experience: 'instr_1_exp',
   },
   {
-    name: 'Normatov Rustam Chorshanbiyevich',
+    name: 'instr_2_name',
     img: './assets/images/avatar1.png',
-    about:
-      'Преподаватель по предметам АССА, финансовому учету (CAP/CIPA), основам МСФО, DipIFR(рус)',
-    experience: '10 лет опыта работы',
+    about: 'instr_2_about',
+    experience: 'instr_2_exp',
   },
   {
-    name: 'Mamurjonov Olimjon Mamurjon o’g’li',
+    name: 'instr_3_name',
     img: './assets/images/avatar2.jpg',
-    about:
-      'Annual balance of goods and materials Calculation of costs Calculation of wages. Material accounting Statistical reporting Cash transactions. Fixed assets Primary documentation Profit and loss statement. Calculation of taxes Tax reporting Financial statements Cash documents Accounting 1C: Enterprise 8',
-    experience: '12 лет опыта работы',
+    about: 'instr_3_about',
+    experience: 'instr_3_exp',
   },
   {
-    name: 'Ким Анжелика Анатольевна',
-    img: './assets/images/avatar3.jpg',
-    about:
-      'С 2017 года профессиональный тренер в НАБУ по Финансовому учету 1, Управленческому учету 1, Финансовая отчетность по  МСФО.',
-    experience:
-      'Непрерывный  стаж 35 года бухгалтерии. Из них: 15 лет финансовый директор и аудитор.',
+    name: 'instr_4_name',
+    img: './assets/images/avat.png',
+    about: 'instr_4_about',
+    experience: 'instr_4_exp',
   },
 ];
 
@@ -46,15 +41,29 @@ const Instructors = () => {
     <Background img="/assets/images/instructors-bg.jpg">
       <Section
         id="staff"
+        yPadding="py-5 pb-10"
         title={
-          <h2 className="text-2xl font-medium text-primary-500 sm:text-3xl title-font">
+          <h2 className="mb-6 text-2xl font-medium text-primary-500 sm:text-3xl title-font">
             {t('explor_instructors')}
           </h2>
         }
       >
         <Carousel
-          leftControl={<AiFillCaretLeft color="black" size={20} />}
-          rightControl={<AiFillCaretRight color="black" size={20} />}
+          indicators={false}
+          leftControl={
+            <AiFillCaretLeft
+              color="black"
+              size={20}
+              className="-translate-x-4"
+            />
+          }
+          rightControl={
+            <AiFillCaretRight
+              color="black"
+              size={20}
+              className="translate-x-4"
+            />
+          }
         >
           {instructorsLists.map((instructor, index) => (
             <Fragment key={index}>

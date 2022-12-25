@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import '@animxyz/core';
 import { Meta } from '../layout/Meta';
 import { AppConfig } from '../utils/AppConfig';
 import { Comments } from './Comments';
@@ -10,7 +12,7 @@ import { Info } from './Info';
 import { Instructors } from './Instructors';
 
 const Base = () => (
-  <div className="antialiased text-gray-600">
+  <div className="overflow-y-hidden antialiased text-gray-600">
     <Meta title={AppConfig.title} description={AppConfig.description} />
     <Hero />
     <Info />
