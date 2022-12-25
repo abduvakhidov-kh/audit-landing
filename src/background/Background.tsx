@@ -17,7 +17,7 @@ const Background = (props: IBackgroundProps) => {
       {props.children}
       <style jsx>{`
         .img-bg {
-          background-image: url('${router.basePath}${props.img}');
+          background-image: url('${router.basePath + props.img}');
           background-size: ${props.size ? props.size : '100% 100%'};
         }
       `}</style>
