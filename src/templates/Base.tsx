@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import '@animxyz/core';
+
 import { Meta } from '../layout/Meta';
 import { AppConfig } from '../utils/AppConfig';
 import { Comments } from './Comments';
