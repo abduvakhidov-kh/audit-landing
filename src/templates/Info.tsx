@@ -12,7 +12,7 @@ const features: {
   description: string;
   image: string;
 }[] = [
-  { id: 0, description: 'students', image: '/assets/images/feature1.jpg' },
+  { id: 0, description: 'students', image: '/assets/images/feature1.png' },
   {
     id: 1,
     description: 'work_period',
@@ -21,7 +21,7 @@ const features: {
   {
     id: 2,
     description: 'about_courses',
-    image: '/assets/images/feature3.jpg',
+    image: '/assets/images/feature3.png',
   },
 ];
 
@@ -31,7 +31,9 @@ const Info = () => {
   const verticalFeatureClass = className('flex', 'flex-wrap', 'items-center');
 
   return (
-    <div className={verticalFeatureClass}>
+    <div
+      className={`${verticalFeatureClass} bg-gradient-to-bl from-red-600 via-slate-50 to-white`}
+    >
       <Section
         id="about_us"
         yPadding="py-10 pb-5"
