@@ -13,11 +13,7 @@ const Background = (props: IBackgroundProps) => {
   const router = useRouter();
 
   return (
-    <div
-      className={`${props.color} img-bg h-full my-auto pt-5 bg-[url('${
-        router.basePath + props.img
-      }')]`}
-    >
+    <div className={`${props.color} img-bg h-full my-auto pt-5`}>
       {props.children}
       <style jsx>{`
         .img-bg {
