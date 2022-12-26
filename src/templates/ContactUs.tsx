@@ -1,14 +1,13 @@
 import { XyzTransition } from '@animxyz/react';
 import { useTranslation } from 'next-export-i18n';
 
-import { Background } from '../background/Background';
 import { Section } from '../layout/Section';
 
 const ContactUs = () => {
   const { t } = useTranslation();
 
   return (
-    <Background color="none" img="/assets/images/bg-image.png" size="auto">
+    <div className="pink">
       <Section yPadding="py-5 pb-10" id="groups">
         <XyzTransition appearVisible duration="auto" xyz="fade big delay-2">
           <div className="w-full p-10 mx-auto my-3 rounded-md md:px-12 sm:w-4/5 md:w-1/2 bg-orange-50 background">
@@ -76,19 +75,26 @@ const ContactUs = () => {
                 </div>
               </div>
             </div>
-            <style jsx>
-              {`
-                .background {
-                  -webkit-box-shadow: -2px 1px 8px 6px rgba(34, 60, 80, 0.2);
-                  -moz-box-shadow: -2px 1px 8px 6px rgba(34, 60, 80, 0.2);
-                  box-shadow: -2px 1px 8px 6px rgba(34, 60, 80, 0.2);
-                }
-              `}
-            </style>
           </div>
         </XyzTransition>
       </Section>
-    </Background>
+      <style jsx>
+        {`
+          .background {
+            -webkit-box-shadow: -2px 1px 8px 6px rgba(34, 60, 80, 0.2);
+            -moz-box-shadow: -2px 1px 8px 6px rgba(34, 60, 80, 0.2);
+            box-shadow: -2px 1px 8px 6px rgba(34, 60, 80, 0.2);
+          }
+          .pink {
+            background-image: linear-gradient(
+              to right,
+              rgb(242, 112, 156),
+              rgb(255, 148, 114)
+            );
+          }
+        `}
+      </style>
+    </div>
   );
 };
 

@@ -38,7 +38,7 @@ const Instructors = () => {
   const { t } = useTranslation();
 
   return (
-    <Background img="/assets/images/instructors-bg.jpg">
+    <Background color="bg-slate-100">
       <Section
         id="staff"
         yPadding="py-5 pb-10"

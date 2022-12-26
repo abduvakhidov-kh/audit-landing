@@ -4,7 +4,6 @@ import { XyzTransition } from '@animxyz/react';
 import { Button, Card } from 'flowbite-react';
 import { useTranslation } from 'next-export-i18n';
 
-import bg from '../../public/assets/images/bg.jpg';
 import { CourseModal } from '../feature/Modal';
 import { Section } from '../layout/Section';
 import { CourseDifficulty } from '../types';
@@ -220,11 +219,10 @@ const Courses = () => {
   }, [isExpanded]);
 
   return (
-    // <Background img="/assets/images/bg.jpg">
-    <div className="h-full my-auto img-bg">
+    <div className="relaxing-red">
       <Section
-        yPadding="py-0"
-        title={<span className="py-10 text-primary-600">{t('courses')}</span>}
+        yPadding="py-10"
+        title={<span className="pb-5 text-primary-600">{t('courses')}</span>}
         id="courses"
       >
         <XyzTransition
@@ -275,13 +273,16 @@ const Courses = () => {
       </Section>
       <style jsx>
         {`
-          .img-bg {
-            background-image: url('${bg.src}');
-            background-size: '100% 100%';
+          .relaxing-red {
+            background-image: linear-gradient(
+              to right,
+              #c6ffdd,
+              #fbd786,
+              #f7797d
+            );
           }
         `}
       </style>
-      {/* </Background> */}
     </div>
   );
 };

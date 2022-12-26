@@ -15,8 +15,8 @@ const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="h-screen">
-      <Background img="/assets/images/hero-bg.jpg">
+    <div className="h-screen bg-gradient-to-tl from-red-600 via-slate-50 to-white">
+      <Background>
         <Section yPadding="py-5">
           <NavbarTwoColumns logo={<Logo />}>
             <li>

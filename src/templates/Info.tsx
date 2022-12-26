@@ -28,19 +28,13 @@ const features: {
 const Info = () => {
   const { t } = useTranslation();
 
-  const verticalFeatureClass = className(
-    'mx-2',
-    'my-10',
-    'flex',
-    'flex-wrap',
-    'items-center'
-  );
+  const verticalFeatureClass = className('flex', 'flex-wrap', 'items-center');
 
   return (
     <div className={verticalFeatureClass}>
       <Section
         id="about_us"
-        yPadding="py-0"
+        yPadding="py-10 pb-5"
         title={<span className="text-primary-600">{t('about_us')}</span>}
       >
         <div>
