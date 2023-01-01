@@ -12,7 +12,7 @@ const NavbarTwoColumns = (props: INavbarProps) => {
     <Navbar
       fluid={true}
       rounded={true}
-      className="mb-auto bg-transparent header-bg drop-shadow-2xl"
+      className="mb-auto bg-transparent header-bg drop-shadow-xl"
     >
       <div className="container flex flex-wrap items-center justify-between mx-auto bg-transparent ">
         <Navbar.Brand href="/" className="bg-transparent \">

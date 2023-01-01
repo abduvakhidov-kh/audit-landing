@@ -9,7 +9,7 @@ type IBackgroundProps = {
 
 const Background = (props: IBackgroundProps) => {
   return (
-    <div className={`${props.color} img-bg h-full my-auto pt-5`}>
+    <div className={`${props.color} img-bg h-full my-auto`}>
       {props.children}
       <style jsx>{`
         .img-bg {

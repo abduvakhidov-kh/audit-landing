@@ -1,10 +1,7 @@
 import { Fragment } from 'react';
 
-import { Carousel } from 'flowbite-react';
 import { useTranslation } from 'next-export-i18n';
-import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
 
-import { Background } from '../background/Background';
 import { InstructorInfo } from '../feature/InstructorInfo';
 import { Section } from '../layout/Section';
 
@@ -38,7 +35,7 @@ const Instructors = () => {
   const { t } = useTranslation();
 
   return (
-    <Background color="bg-slate-100">
+    <div className="w-full bg-fixed bg-center bg-cover bg-intructors">
       <Section
         id="staff"
         yPadding="py-5 pb-10"
@@ -48,31 +45,15 @@ const Instructors = () => {
           </h2>
         }
       >
-        <Carousel
-          indicators={false}
-          leftControl={
-            <AiFillCaretLeft
-              color="black"
-              size={20}
-              className="-translate-x-4"
-            />
-          }
-          rightControl={
-            <AiFillCaretRight
-              color="black"
-              size={20}
-              className="translate-x-4"
-            />
-          }
-        >
+        <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
           {instructorsLists.map((instructor, index) => (
             <Fragment key={index}>
               <InstructorInfo instructor={instructor} />
             </Fragment>
           ))}
-        </Carousel>
+        </div>
       </Section>
-    </Background>
+    </div>
   );
 };
 

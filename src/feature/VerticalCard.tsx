@@ -11,7 +11,6 @@ type IVerticalCardProps = {
 
 const VerticalCard = (props: IVerticalCardProps) => {
   const verticalFeatureClass = className(
-    'vertical-card',
     'm-4',
     'flex',
     'flex-col',

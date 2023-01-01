@@ -1,25 +1,20 @@
-import { ReactNode, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { XyzTransition } from '@animxyz/react';
-import { Button, Card } from 'flowbite-react';
+import { Button } from 'flowbite-react';
 import { useTranslation } from 'next-export-i18n';
 
+import { CourseCard } from '../feature/CourseCard';
 import { CourseModal } from '../feature/Modal';
 import { Section } from '../layout/Section';
-import { CourseDifficulty } from '../types';
+import { CourseDifficulty, ModalDataType } from '../types';
+import { ContactUs } from './ContactUs';
 
 const coursesList: {
   id: number;
   title: string;
   img: string;
-  modalData: {
-    difficulty: CourseDifficulty;
-    period?: string;
-    description?: string;
-    destination?: string;
-    price?: string;
-    instructors?: ReactNode;
-  };
+  modalData: ModalDataType;
 }[] = [
   {
     id: 0,
@@ -30,7 +25,6 @@ const coursesList: {
       period: 'course_1_dur',
       description: 'xourse_1_desc',
       destination: 'empty_info',
-      instructors: <>test</>,
     },
   },
   {
@@ -41,7 +35,6 @@ const coursesList: {
       difficulty: CourseDifficulty.BEGINER,
       period: 'course_1_dur',
       description: 'course_1_desc',
-      instructors: <>test</>,
     },
   },
   {
@@ -53,7 +46,6 @@ const coursesList: {
       period: 'course_2_dur',
       destination: 'course_2_for',
       description: 'course_2_desc',
-      instructors: <>test</>,
     },
   },
   {
@@ -65,7 +57,6 @@ const coursesList: {
       period: 'empty_info',
       destination: 'course_14_for',
       description: 'course_14_desc',
-      instructors: <>test</>,
     },
   },
   {
@@ -77,7 +68,6 @@ const coursesList: {
       period: 'empty_info',
       destination: 'course_3_for',
       description: 'course_3_desc',
-      instructors: <>test</>,
     },
   },
   {
@@ -89,7 +79,6 @@ const coursesList: {
       period: 'empty_info',
       destination: 'course_4_for',
       description: 'course_4_desc',
-      instructors: <>test</>,
     },
   },
   {
@@ -101,7 +90,6 @@ const coursesList: {
       period: 'course_5_dur',
       destination: 'course_5_for',
       description: 'test description',
-      instructors: <>test</>,
     },
   },
   {
@@ -112,9 +100,7 @@ const coursesList: {
       difficulty: CourseDifficulty.ADVANCED,
       period: 'empty_info',
       destination: 'course_6_for',
-
-      description: '',
-      instructors: <>test</>,
+      description: 'empty_info',
     },
   },
   {
@@ -126,7 +112,6 @@ const coursesList: {
       period: 'course_7_dur',
       description: 'course_7_desc',
       destination: 'course_7_for',
-      instructors: <>test</>,
     },
   },
   {
@@ -138,7 +123,6 @@ const coursesList: {
       period: 'empty_info',
       destination: 'course_8_for',
       description: 'course_8_desc',
-      instructors: <>test</>,
     },
   },
   {
@@ -150,7 +134,6 @@ const coursesList: {
       period: 'empty_info',
       description: 'course_9_desc',
       destination: 'course_9_for',
-      instructors: <>test</>,
     },
   },
   {
@@ -162,7 +145,6 @@ const coursesList: {
       period: 'empty_info',
       description: 'course_10_desc',
       destination: 'course_10_for',
-      instructors: <>test</>,
     },
   },
   {
@@ -174,7 +156,6 @@ const coursesList: {
       period: 'course_11_dur',
       description: 'course_11_desc',
       destination: 'course_11_for',
-      instructors: <>test</>,
     },
   },
   {
@@ -186,7 +167,6 @@ const coursesList: {
       period: 'empty_info',
       description: 'course_12_desc',
       destination: 'course_12_for',
-      instructors: <>test</>,
     },
   },
   {
@@ -198,7 +178,6 @@ const coursesList: {
       period: 'empty_info',
       description: 'course_13_desc',
       destination: 'course_13_for',
-      instructors: <>test</>,
     },
   },
 ];
@@ -215,74 +194,82 @@ const Courses = () => {
     if (isExpanded) {
       return coursesList;
     }
-    return coursesList.slice(0, 8);
+    return coursesList.slice(0, 4);
   }, [isExpanded]);
 
   return (
-    <div className="relaxing-red">
+    <div>
       <Section
-        yPadding="py-10"
-        title={<span className="pb-5 text-primary-600">{t('courses')}</span>}
+        yPadding="py-10 md:py-5 lg:py-10 lg:pb-0"
+        title={<span className="pb-5 text-primary-600"></span>}
         id="courses"
       >
-        <XyzTransition
-          appearVisible
-          duration="auto"
-          xyz="fade stagger duration-10 delay-2 ease-out-back"
+        <div
+          className={`flex min-w-full gap-1 lg:gap-4 ${
+            isExpanded
+              ? 'lg:flex-col flex-col-reverse'
+              : 'lg:flex-row flex-col-reverse'
+          } lg:justify-between`}
         >
-          <div className="w-full py-5">
-            <div className="grid gap-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
-              {coursesData.map(({ title, modalData, id, img }) => (
-                <div
-                  className="max-w-sm mx-auto xyz-nested drop-shadow-xl"
-                  key={id}
-                >
-                  <Card className="h-full" imgAlt={t(title)} imgSrc={img}>
-                    <h5 className="mx-0 my-auto text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      {t(title)}
-                    </h5>
-                    <CourseModal
-                      button={
-                        <Button className="bg-primary-500">
-                          {t('read_more')}
-                          <svg
-                            className="w-4 h-4 ml-2 -mr-1"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                        </Button>
+          <XyzTransition
+            appearVisible
+            duration="auto"
+            xyz="fade stagger duration-10 delay-2 ease-out-back"
+          >
+            <div className="w-full py-2">
+              <div className="flex items-center justify-between w-full py-2">
+                <h2 className="text-3xl font-bold text-primary-600">
+                  {t('courses')}
+                </h2>
+                <Button className="px-3 py-1" onClick={handleClick}>
+                  {isExpanded ? t('less') : t('more')}
+                </Button>
+              </div>
+              <div
+                className={`grid gap-5 ${
+                  isExpanded ? 'lg:grid-cols-4' : 'lg:grid-cols-2'
+                } md:grid-cols-2 sm:grid-cols-1`}
+              >
+                {coursesData.map(({ title, modalData, id, img }) => (
+                  <div key={id} className="max-w-full xyz-nested">
+                    <CourseCard
+                      title={t(title)}
+                      modal={
+                        <CourseModal
+                          button={
+                            <Button className="bg-primary-500">
+                              {t('read_more')}
+                              <svg
+                                className="w-4 h-4 ml-2 -mr-1"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                  clipRule="evenodd"
+                                />
+                              </svg>
+                            </Button>
+                          }
+                          courseData={modalData}
+                        />
                       }
-                      courseData={modalData}
+                      img={img}
                     />
-                  </Card>
-                </div>
-              ))}
+                  </div>
+                ))}
+              </div>
             </div>
-            <Button className="px-3 py-1 mx-auto mt-5" onClick={handleClick}>
-              {isExpanded ? t('less') : t('more')}
-            </Button>
+          </XyzTransition>
+          <div
+            className={`lg:${isExpanded ? 'translate-y-0' : '-translate-y-32'}`}
+          >
+            <ContactUs />
           </div>
-        </XyzTransition>
+        </div>
       </Section>
-      <style jsx>
-        {`
-          .relaxing-red {
-            background-image: linear-gradient(
-              to right,
-              #c6ffdd,
-              #fbd786,
-              #f7797d
-            );
-          }
-        `}
-      </style>
     </div>
   );
 };

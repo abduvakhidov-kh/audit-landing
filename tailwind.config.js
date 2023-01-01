@@ -23,6 +23,14 @@ module.exports = {
       '6xl': '4rem',
     },
     extend: {
+      backgroundImage: {
+        hero: "url('/assets/images/bg-hero1.jpg')",
+        intructors: "url('/assets/images/comments-bg1.jpg')",
+        comments: "url('/assets/images/comments-bg2.jpg')",
+        info: "url('/assets/images/info-bg.jpg')",
+        location: "url('/assets/images/location-bg.jpg')",
+        categories: "url('/assets/images/categories-bg.jpg')",
+      },
       colors: {
         primary: colors.red,
         gray: {

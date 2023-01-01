@@ -1,10 +1,7 @@
-import { Fragment } from 'react';
-
 import { XyzTransition } from '@animxyz/react';
-import className from 'classnames';
 import { useTranslation } from 'next-export-i18n';
 
-import { VerticalCard } from '../feature/VerticalCard';
+import { VerticalFeatureRow } from '../feature/VerticalFeatureRow';
 import { Section } from '../layout/Section';
 
 const features: {
@@ -25,62 +22,86 @@ const features: {
   },
 ];
 
+const gallery: string[] = [
+  './assets/images/gallery1.jpg',
+  './assets/images/gallery2.jpg',
+  './assets/images/gallery3.jpg',
+];
+
 const Info = () => {
   const { t } = useTranslation();
 
-  const verticalFeatureClass = className('flex', 'flex-wrap', 'items-center');
-
   return (
-    <div
-      className={`${verticalFeatureClass} bg-gradient-to-bl from-red-600 via-slate-50 to-white`}
-    >
-      <Section
-        id="about_us"
-        yPadding="py-10 pb-5"
-        title={<span className="text-primary-600">{t('about_us')}</span>}
-      >
-        <div>
+    <div className="items-center w-full bg-gray-100 ">
+      <Section id="about_us" yPadding="py-10 pb-5">
+        <h2 className="mb-2 text-4xl font-bold text-primary-600">
+          {t('about_us')}
+        </h2>
+        <div className="grid grid-cols-1 lg:gap-6 lg:grid-cols-3">
           <XyzTransition
             appearVisible
             duration="auto"
             xyz="fade flip-down stagger duration-10 delay-2"
           >
-            <div className="grid w-full lg:grid-cols-3 place-items-center md:grid-cols-2 sm:grid-cols-2">
-              {features.map(({ id, description, image }) => (
-                <Fragment key={id}>
-                  <VerticalCard
-                    description={t(`${description}`)}
-                    imageAlt={t(`${description}`)}
-                    image={image}
-                  />
-                </Fragment>
+            <div className="grid w-full grid-cols-1 col-span-2 gap-1 md:grid-cols-2 h-fit">
+              {gallery.map((img, index) => (
+                <img
+                  key={img}
+                  src={img}
+                  className={`object-cover ${
+                    index === 0 ? 'md:col-span-2 md:img-big' : 'md:img-small'
+                  } rounded-md`}
+                  alt="image from lessons xyz-nested"
+                />
               ))}
             </div>
           </XyzTransition>
-        </div>
-        <XyzTransition
-          appearVisible
-          duration="auto"
-          xyz="fade flip-down stagger duration-10 delay-2"
-        >
-          <div className="flex flex-col h-screen mt-4 xyz-nested">
-            <img
-              src="./assets/images/graduated.jpg"
-              style={{
-                height: '80%',
-                width: '100%',
-                objectFit: 'cover',
-                borderRadius: '10px',
-              }}
-              className="sm:h-96"
-              alt="section about graduated students"
-            />
-            <div className="mt-6 text-lg font-semibold leading-relaxed text-center text-gray-700">
-              {t('about_students')}
+          <XyzTransition
+            appearVisible
+            duration="auto"
+            xyz="fade flip-down stagger duration-10 delay-2"
+          >
+            <div className="w-full mt-2 xyz-nested">
+              <div className="flex items-center justify-center p-6 mx-auto text-center bg-white rounded-md shadow-md h-fit xyz-nested">
+                <blockquote>
+                  <p className="w-full text-lg font-medium xyz-nested">
+                    {t('about_students')}
+                  </p>
+                </blockquote>
+              </div>
+              <div className="flex flex-col items-center">
+                <h2 className="mt-2 text-4xl font-bold text-primary-600 place-self-start xyz-nested">
+                  {t('why_we')}
+                </h2>
+                <div className="grid w-full grid-cols-1 grid-rows-3 gap-2 h-fit">
+                  {features.map(({ id, description, image }) => (
+                    <div key={id} className="xyz-nested">
+                      <VerticalFeatureRow
+                        reverse
+                        description={t(`${description}`)}
+                        imageAlt={t(`${description}`)}
+                        image={image}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-        </XyzTransition>
+          </XyzTransition>
+        </div>
       </Section>
+      <style jsx>
+        {`
+          .img-big {
+            height: 430px;
+            width: 100%;
+          }
+          .img-small {
+            width: 100%;
+            height: 375px;
+          }
+        `}
+      </style>
     </div>
   );
 };

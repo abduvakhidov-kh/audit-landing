@@ -12,7 +12,7 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <Background color="bg-slate-100">
+    <Background color="bg-white">
       <Section id="contacts" yPadding="py-10">
         <div className="flex flex-col items-center sm:gap-2 md:gap-4 md:flex-row">
           <div className="w-full md:w-2/3">
@@ -24,14 +24,14 @@ const Footer = () => {
             </h3>
             {/* Location */}
             <p className="flex items-center gap-2">
-              <ImLocation size={20} className="text-primary-600" />
+              <ImLocation size={20} className="text-primary-500" />
               <span className="font-bold text-black">
                 {t('location_address')}
               </span>
             </p>
             {/* phone */}
             <p className="flex items-center gap-2">
-              <FiPhoneCall size={20} className="text-primary-600" />
+              <FiPhoneCall size={20} className="text-primary-500" />
               <span className="font-bold text-black">
                 <p>+998 95 189 55 89</p>
                 <p>+998 95 197 81 99</p>
@@ -44,7 +44,7 @@ const Footer = () => {
                 className="flex items-center gap-2"
                 style={{ display: 'flex' }}
               >
-                <BsTelegram size={20} className="text-primary-600" />
+                <BsTelegram size={20} className="text-primary-500" />
                 <span className="font-bold text-black">
                   <a href="https://t.me/NOU_AUDITFORWARD">@NOU_AUDITFORWARD</a>
                 </span>
@@ -56,7 +56,7 @@ const Footer = () => {
                 className="flex items-center gap-2"
                 style={{ display: 'flex' }}
               >
-                <HiOutlineMail size={20} className="text-primary-600" />
+                <HiOutlineMail size={20} className="text-primary-500" />
                 <span className="font-bold text-black">
                   <a href="mailto:auditforward@mail.ru">auditforward@mail.ru</a>
                 </span>

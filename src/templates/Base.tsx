@@ -4,7 +4,6 @@ import '@animxyz/core';
 import { Meta } from '../layout/Meta';
 import { AppConfig } from '../utils/AppConfig';
 import { Comments } from './Comments';
-import { ContactUs } from './ContactUs';
 import { Courses } from './Courses';
 import { Documents } from './Documents';
 import { Footer } from './Footer';
@@ -16,12 +15,11 @@ const Base = () => (
   <div className="overflow-x-hidden antialiased text-gray-600">
     <Meta title={AppConfig.title} description={AppConfig.description} />
     <Hero />
-    <Info />
     <Courses />
+    <Info />
     <Instructors />
     <Documents />
     <Comments />
-    <ContactUs />
     <Footer />
   </div>
 );
