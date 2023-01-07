@@ -23,8 +23,8 @@ const coursesList: {
     modalData: {
       difficulty: CourseDifficulty.BEGINER,
       period: 'course_1_dur',
-      description: 'xourse_1_desc',
-      destination: 'empty_info',
+      description: 'course_1_desc',
+      destination: 'course_1_for',
     },
   },
   {
@@ -214,7 +214,7 @@ const Courses = () => {
           <XyzTransition
             appearVisible
             duration="auto"
-            xyz="fade stagger duration-10 delay-2 ease-out-back"
+            xyz="fade stagger duration-10 ease-out-back"
           >
             <div className="w-full py-2">
               <div className="flex items-center justify-between w-full py-2">
@@ -264,7 +264,9 @@ const Courses = () => {
             </div>
           </XyzTransition>
           <div
-            className={`lg:${isExpanded ? 'translate-y-0' : '-translate-y-32'}`}
+            className={`${
+              isExpanded ? 'lg:translate-y-0' : 'lg:-translate-y-32'
+            }`}
           >
             <ContactUs />
           </div>

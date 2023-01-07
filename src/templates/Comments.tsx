@@ -17,17 +17,14 @@ const Comments = () => {
           {commentsList.map((comment, index) => (
             <Fragment key={index}>
               <Section yPadding="py-10">
-                <h5 className="w-full text-4xl font-bold text-center xyz-nested text-primary-500">
-                  {t('comments')}
-                </h5>
-                <div className="flex flex-col items-center justify-center">
-                  <div className="pt-6 space-y-4">
-                    <blockquote>
-                      <p className="w-full text-lg font-medium text-center text-gray-100 xyz-nested drop-shadow-md">
-                        {t(comment)}
-                      </p>
-                    </blockquote>
-                  </div>
+                <div className="p-10 font-semibold text-center bg-white border rounded-md shadow-lg">
+                  <img
+                    className="w-32 h-32 mx-auto mb-3 rounded-md shadow-lg"
+                    src="https://cdn.tuk.dev/assets/photo-1570211776045-af3a51026f4a.jfif"
+                    alt="product designer"
+                  />
+                  <h1 className="text-gray-900 text-lxl"> Aziz Yuldoshev </h1>
+                  <p className="mt-4 text-gray-700">{t(comment)}</p>
                 </div>
               </Section>
             </Fragment>

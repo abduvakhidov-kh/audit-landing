@@ -41,7 +41,7 @@ const Info = () => {
           <XyzTransition
             appearVisible
             duration="auto"
-            xyz="fade flip-down stagger duration-10 delay-2"
+            xyz="fade flip-down stagger duration-10"
           >
             <div className="grid w-full grid-cols-1 col-span-2 gap-1 md:grid-cols-2 h-fit">
               {gallery.map((img, index) => (
@@ -59,7 +59,7 @@ const Info = () => {
           <XyzTransition
             appearVisible
             duration="auto"
-            xyz="fade flip-down stagger duration-10 delay-2"
+            xyz="fade flip-down stagger duration-10"
           >
             <div className="w-full mt-2 xyz-nested">
               <div className="flex items-center justify-center p-6 mx-auto text-center bg-white rounded-md shadow-md h-fit xyz-nested">

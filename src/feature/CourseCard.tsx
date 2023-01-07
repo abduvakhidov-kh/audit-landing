@@ -32,7 +32,7 @@ const CourseCard = ({ title, img, modal }: CardProps) => (
         .card:hover .image h2 {
           bottom: 50px;
         }
-        .card .image img {
+        .image img {
           width: 100%;
           height: 100%;
           object-fit: cover;
@@ -41,7 +41,7 @@ const CourseCard = ({ title, img, modal }: CardProps) => (
         .card:hover .image img {
           transform: translateY(-10%);
         }
-        .card .details {
+        .details {
           transition: 0.5s;
           transform-origin: bottom;
           transform: perspective(2000px) rotateX(-90deg);

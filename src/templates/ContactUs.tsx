@@ -25,7 +25,7 @@ const ContactUs = () => {
 
   const onSend = () => {
     fetch(
-      `https://api.telegram.org/bot5941746851:{Key}/sendMessage?chat_id={Chat_id}&text=Новая+заявка+на+сайте%2C%0A%0AИмя+клиента%3A+${inputsData.clientName}%0AНомер+Телефона+клиента%3A+${inputsData.telNumber}%0AСообщение+клиента%3A+${inputsData.comment}%0A&parse_mode=Markdown`
+      `https://api.telegram.org/bot5901853255:AAE_iq7-gJwaDkcHGwSRtl2vSjmLEUt3GMQ/sendMessage?chat_id=-793747320&text=Новая+заявка+на+сайте%2C%0A%0AИмя+клиента%3A+${inputsData.clientName}%0AНомер+Телефона+клиента%3A+${inputsData.telNumber}%0AСообщение+клиента%3A+${inputsData.comment}%0A&parse_mode=Markdown`
     );
   };
 
@@ -34,7 +34,7 @@ const ContactUs = () => {
       className="flex flex-col w-full px-4 py-2 bg-white rounded-md lg:py-6 lg:px-10"
       rounded-md
     >
-      <XyzTransition appearVisible duration="auto" xyz="fade big delay-2">
+      <XyzTransition appearVisible duration="auto" xyz="fade big">
         <div className="w-full">
           <div className="flex flex-col mx-auto mb-4">
             <div className="flex items-center justify-between w-full mb-4">
@@ -105,7 +105,7 @@ const ContactUs = () => {
           </div>
         </div>
       </XyzTransition>
-      <XyzTransition appearVisible duration="auto" xyz="fade big delay-2">
+      <XyzTransition appearVisible duration="auto" xyz="fade big">
         <div className="flex flex-col gap-2 mb-4">
           <h2 className="text-2xl font-medium text-primary-500 sm:text-3xl">
             {t('student_count_title')}

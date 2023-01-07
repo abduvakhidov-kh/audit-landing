@@ -15,7 +15,7 @@ const InstructorInfo: FC<InstructorInfoProps> = ({ instructor }) => {
   const { t } = useTranslation();
   const { name, img, about, experience } = instructor;
   return (
-    <div className="p-6 border border-gray-100 rounded-xl bg-gray-50 sm:flex sm:space-x-8 sm:p-8">
+    <div className="p-6 border border-gray-100 rounded-xl bg-gray-50 sm:flex sm:space-x-8 sm:p-8 xyz-nested">
       <img
         className="w-20 h-20 mx-auto rounded-md md:mx-0"
         src={img === undefined ? './assets/images/default-avatar.webp' : img}
