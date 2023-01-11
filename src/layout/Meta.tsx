@@ -16,11 +16,11 @@ const Meta = (props: IMetaProps) => {
   return (
     <>
       <Head>
-        <meta property="url" content="https://www.audit-f.uz/" />
+        <meta property="url" content="https://www.avtokurs.uz/" />
         <meta
           name="keywords"
-          content="Аудиторские курсы,Audit kurs, Audit kurslari, Аудиторский отчет, аудит в узбекистане, аудиторских курсы в ташкенте, обучение аудиту в Ташкенте, Бухгалтерские курсы в Ташкенте, Ведение бухгалтерского учета, Консалтинговые услуги, Восстановление бухгалтерского учета, бухгалтерский аутсорсин, обучение составление финансовых отчетов, подготовиться к налоговой проверке, аудитор, аудитора, Аудит финансовый, Налоговый аудит, buxgalter kurslari, buxgalter kursi, buxgalter noldan, buxgalteriya organish, обучение бухгалтерие"
-        ></meta>
+          content="avtokurs, avto maktab, haydovhcilik guvohnoma oliw, avto kurslar, avto kurs, avtomaktab, автокурс, автокурсы, автошкола, получение водительских прав, обучение вождению, авто школа курсы по вождению"
+        />
         <meta charSet="UTF-8" key="charset" />
         <meta
           name="viewport"
