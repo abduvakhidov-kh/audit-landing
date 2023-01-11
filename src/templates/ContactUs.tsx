@@ -25,7 +25,7 @@ const ContactUs = () => {
 
   const onSend = () => {
     fetch(
-      `https://api.telegram.org/bot5901853255:AAE_iq7-gJwaDkcHGwSRtl2vSjmLEUt3GMQ/sendMessage?chat_id=-793747320&text=Новая+заявка+на+сайте%2C%0A%0AИмя+клиента%3A+${inputsData.clientName}%0AНомер+Телефона+клиента%3A+${inputsData.telNumber}%0AСообщение+клиента%3A+${inputsData.comment}%0A&parse_mode=Markdown`
+      `https://api.telegram.org/bot5901853255:AAE_iq7-gJwaDkcHGwSRtl2vSjmLEUt3GMQ/sendMessage?chat_id=-1001831657152&text=Новая+заявка+на+сайте%2C%0A%0AИмя+клиента%3A+${inputsData.clientName}%0AНомер+Телефона+клиента%3A+${inputsData.telNumber}%0AСообщение+клиента%3A+${inputsData.comment}%0A`
     );
   };
 

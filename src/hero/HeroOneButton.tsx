@@ -20,7 +20,7 @@ const HeroOneButton = (props: IHeroOneButtonProps) => (
       {props.button}
     </div>
     <img
-      src="./assets/images/header.png"
+      src="./assets/images/hero-women.png"
       alt="header image"
       loading="lazy"
       className="hidden w-full xyz-nested md:block md:w-2/3"
