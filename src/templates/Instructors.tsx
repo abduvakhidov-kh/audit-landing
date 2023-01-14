@@ -22,7 +22,7 @@ const instructorsLists = [
   },
   {
     name: 'instr_4_name',
-    img: './assets/images/avat.png',
+    img: './assets/images/avatar.png',
     about: 'instr_4_about',
     experience: 'instr_4_exp',
   },
@@ -36,6 +36,12 @@ const instructorsLists = [
     img: './assets/images/avatar3.jpg',
     about: 'instr_5_about',
     experience: 'instr_5_exp',
+  },
+  {
+    name: 'instr_6_name',
+    img: './assets/images/avatar4.png',
+    about: 'instr_6_about',
+    experience: 'instr_6_exp',
   },
 ];
 
