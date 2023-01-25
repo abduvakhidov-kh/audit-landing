@@ -9,6 +9,7 @@ import { Paragraph } from './Typography';
 
 type IContactModalProps = {
   button?: ReactNode;
+  customText?: string;
   courseData: {
     difficulty: CourseDifficulty;
     period?: string;
@@ -21,7 +22,7 @@ type IContactModalProps = {
 
 const CourseModal = (props: IContactModalProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { courseData, button } = props;
+  const { courseData, button, customText } = props;
 
   const { t } = useTranslation();
 
@@ -44,31 +45,40 @@ const CourseModal = (props: IContactModalProps) => {
       <span onClick={onClick} className="cursor-pointer w-fit">
         {button}
       </span>
-      <Modal show={isOpen} onClose={onClose}>
+      <Modal show={isOpen} onClose={onClose} size="6xl">
         <Modal.Header>
           <span className="tracking-wide font-bolder">{t('details')}</span>
         </Modal.Header>
         <Modal.Body>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 p-2">
             <div className="flex gap-2">
               <h6 className="font-bold text-primary-500 ">
-                Course difficulty:
+                {t('course_difficulty')}
               </h6>
               {courseDifficulty}
             </div>
-            <Paragraph
-              title={t('forWhom') as string}
-              description={t(`${courseData.destination}`)}
-            />
-            <Paragraph
-              title={t('description') as string}
-              description={t(`${courseData.description}`)}
-            />
+            {customText ? (
+              <div
+                className="list-disc custom-text"
+                dangerouslySetInnerHTML={{ __html: t(customText) }}
+              ></div>
+            ) : (
+              <>
+                <Paragraph
+                  title={t('forWhom') as string}
+                  description={t(`${courseData.destination}`)}
+                />
+                <Paragraph
+                  title={t('description') as string}
+                  description={t(`${courseData.description}`)}
+                />
 
-            <Paragraph
-              title={t('duration') as string}
-              description={t(`${courseData.period}`)}
-            />
+                <Paragraph
+                  title={t('duration') as string}
+                  description={t(`${courseData.period}`)}
+                />
+              </>
+            )}
           </div>
         </Modal.Body>
         <Modal.Footer>
@@ -77,6 +87,16 @@ const CourseModal = (props: IContactModalProps) => {
           </Button>
         </Modal.Footer>
       </Modal>
+      <style jsx>
+        {`
+          .custom-text ul {
+            padding: 0 30px;
+          }
+          .list-disc {
+            list-style: disc;
+          }
+        `}
+      </style>
     </Fragment>
   );
 };

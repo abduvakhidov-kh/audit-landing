@@ -14,6 +14,7 @@ const coursesList: {
   id: number;
   title: string;
   img: string;
+  customText?: string;
   modalData: ModalDataType;
 }[] = [
   {
@@ -35,14 +36,16 @@ const coursesList: {
       difficulty: CourseDifficulty.BEGINER,
       period: 'course_1_dur',
       description: 'course_1_desc',
+      destination: 'course_1_for',
     },
   },
   {
     id: 2,
     title: 'course_2',
     img: './assets/images/picture13.jpg',
+    customText: 'course_2_custom',
     modalData: {
-      difficulty: CourseDifficulty.BEGINER,
+      difficulty: CourseDifficulty.INTERMEDIATE,
       period: 'course_2_dur',
       destination: 'course_2_for',
       description: 'course_2_desc',
@@ -52,8 +55,9 @@ const coursesList: {
     id: 3,
     title: 'ACCA DipIFR',
     img: './assets/images/picture12.jpg',
+    customText: 'course_14_custom',
     modalData: {
-      difficulty: CourseDifficulty.INTERMEDIATE,
+      difficulty: CourseDifficulty.ADVANCED,
       period: 'empty_info',
       destination: 'course_14_for',
       description: 'course_14_desc',
@@ -63,8 +67,9 @@ const coursesList: {
     id: 4,
     title: 'course_3',
     img: './assets/images/picture11.jpg',
+    customText: 'course_3_custom',
     modalData: {
-      difficulty: CourseDifficulty.INTERMEDIATE,
+      difficulty: CourseDifficulty.ADVANCED,
       period: 'empty_info',
       destination: 'course_3_for',
       description: 'course_3_desc',
@@ -74,8 +79,9 @@ const coursesList: {
     id: 5,
     img: './assets/images/picture1.jpg',
     title: 'course_4',
+    customText: 'course_4_custom',
     modalData: {
-      difficulty: CourseDifficulty.INTERMEDIATE,
+      difficulty: CourseDifficulty.BEGINER,
       period: 'empty_info',
       destination: 'course_4_for',
       description: 'course_4_desc',
@@ -85,6 +91,7 @@ const coursesList: {
     id: 6,
     img: './assets/images/picture2.jpg',
     title: 'course_5',
+    customText: 'course_5_custom',
     modalData: {
       difficulty: CourseDifficulty.INTERMEDIATE,
       period: 'course_5_dur',
@@ -96,8 +103,9 @@ const coursesList: {
     id: 7,
     img: './assets/images/picture3.jpg',
     title: 'course_6',
+    customText: 'course_6_custom',
     modalData: {
-      difficulty: CourseDifficulty.ADVANCED,
+      difficulty: CourseDifficulty.INTERMEDIATE,
       period: 'empty_info',
       destination: 'course_6_for',
       description: 'empty_info',
@@ -107,8 +115,9 @@ const coursesList: {
     id: 8,
     img: './assets/images/picture8.jpg',
     title: 'course_7',
+    customText: 'course_7_custom',
     modalData: {
-      difficulty: CourseDifficulty.BEGINER,
+      difficulty: CourseDifficulty.ADVANCED,
       period: 'course_7_dur',
       description: 'course_7_desc',
       destination: 'course_7_for',
@@ -118,8 +127,9 @@ const coursesList: {
     id: 9,
     img: './assets/images/picture5.jpg',
     title: 'course_8',
+    customText: 'course_8_custom',
     modalData: {
-      difficulty: CourseDifficulty.INTERMEDIATE,
+      difficulty: CourseDifficulty.ADVANCED,
       period: 'empty_info',
       destination: 'course_8_for',
       description: 'course_8_desc',
@@ -140,8 +150,9 @@ const coursesList: {
     id: 11,
     img: './assets/images/picture7.jpg',
     title: 'course_10',
+    customText: 'course_10_custom',
     modalData: {
-      difficulty: CourseDifficulty.BEGINER,
+      difficulty: CourseDifficulty.ADVANCED,
       period: 'empty_info',
       description: 'course_10_desc',
       destination: 'course_10_for',
@@ -162,8 +173,9 @@ const coursesList: {
     id: 13,
     img: './assets/images/picture9.jpg',
     title: 'course_12',
+    customText: 'course_12_custom',
     modalData: {
-      difficulty: CourseDifficulty.INTERMEDIATE,
+      difficulty: CourseDifficulty.ADVANCED,
       period: 'empty_info',
       description: 'course_12_desc',
       destination: 'course_12_for',
@@ -172,12 +184,10 @@ const coursesList: {
   {
     id: 14,
     img: './assets/images/picture10.jpg',
-    title: 'course_13',
+    title: 'course_15',
+    customText: 'course_15_custom',
     modalData: {
-      difficulty: CourseDifficulty.BEGINER,
-      period: 'empty_info',
-      description: 'course_13_desc',
-      destination: 'course_13_for',
+      difficulty: CourseDifficulty.ADVANCED,
     },
   },
 ];
@@ -202,7 +212,6 @@ const Courses = () => {
       <Section
         yPadding="py-10 md:py-5 lg:py-10 lg:pb-0"
         title={<span className="pb-5 text-primary-600"></span>}
-        id="courses"
       >
         <div
           className={`flex min-w-full gap-1 lg:gap-4 ${
@@ -216,7 +225,7 @@ const Courses = () => {
             duration="auto"
             xyz="fade stagger duration-10 ease-out-back"
           >
-            <div className="w-full py-2">
+            <div className="w-full py-2" id="courses">
               <div className="flex items-center justify-between w-full py-2">
                 <h2 className="text-3xl font-bold text-primary-600">
                   {t('courses')}
@@ -230,36 +239,39 @@ const Courses = () => {
                   isExpanded ? 'lg:grid-cols-4' : 'lg:grid-cols-2'
                 } md:grid-cols-2 sm:grid-cols-1`}
               >
-                {coursesData.map(({ title, modalData, id, img }) => (
-                  <div key={id} className="max-w-full xyz-nested">
-                    <CourseCard
-                      title={t(title)}
-                      modal={
-                        <CourseModal
-                          button={
-                            <Button className="bg-primary-500">
-                              {t('read_more')}
-                              <svg
-                                className="w-4 h-4 ml-2 -mr-1"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  fillRule="evenodd"
-                                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                  clipRule="evenodd"
-                                />
-                              </svg>
-                            </Button>
-                          }
-                          courseData={modalData}
-                        />
-                      }
-                      img={img}
-                    />
-                  </div>
-                ))}
+                {coursesData.map(
+                  ({ title, modalData, id, img, customText }) => (
+                    <div key={id} className="max-w-full xyz-nested">
+                      <CourseCard
+                        title={t(title)}
+                        modal={
+                          <CourseModal
+                            button={
+                              <Button className="bg-primary-500">
+                                {t('read_more')}
+                                <svg
+                                  className="w-4 h-4 ml-2 -mr-1"
+                                  fill="currentColor"
+                                  viewBox="0 0 20 20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                    clipRule="evenodd"
+                                  />
+                                </svg>
+                              </Button>
+                            }
+                            courseData={modalData}
+                            customText={customText}
+                          />
+                        }
+                        img={img}
+                      />
+                    </div>
+                  )
+                )}
               </div>
             </div>
           </XyzTransition>

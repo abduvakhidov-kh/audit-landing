@@ -11,7 +11,7 @@ const Comments = () => {
   const { t } = useTranslation();
 
   return (
-    <figure className="w-full bg-scroll bg-center bg-cover bg-comments">
+    <figure className="w-full bg-gray-50">
       <XyzTransition appearVisible duration="auto" xyz="fade left stagger">
         <div>
           {commentsList.map((comment, index) => (
